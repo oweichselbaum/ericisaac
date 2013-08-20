@@ -5,8 +5,16 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
+gem 'pg', '~> 0.14'
+gem 'bourbon', '~> 2.1.1'
+gem 'haml'
+gem 'formtastic'
+gem 'country-select'
+gem 'carrierwave'
+gem 'devise'
+gem 'acts_as_previous_next'
+gem "fog", "~> 1.3.1"
+gem 'tinymce-rails', '3.5.6'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -15,7 +23,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  # gem 'therubyracer', :platform => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -35,4 +43,5 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+# gem 'ruby-debug19', :require => 'ruby-debug'
+

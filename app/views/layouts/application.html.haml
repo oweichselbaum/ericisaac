@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Eric Isaac
+    - if content_for?(:meta_keywords)
+      = content_for(:meta_keywords)
+
+    - if content_for?(:meta_description)
+      = content_for(:meta_description)
+
+    = stylesheet_link_tag "application", :media => 'all'
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body{:class => body_classes}
+    #flash
+      %p.notice= notice
+      %p.alert= alert
+
+      = yield
+
+

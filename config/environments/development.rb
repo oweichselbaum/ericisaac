@@ -21,6 +21,7 @@ Ericisaac::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   # Raise exception on mass assignment protection for Active Record models
   config.active_record.mass_assignment_sanitizer = :strict
@@ -34,4 +35,5 @@ Ericisaac::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
 end
