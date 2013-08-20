@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Eric Isaac
+    %title Eric Isaac Admin
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -12,5 +12,5 @@
       %p.alert= alert
 
     %h1 Admin
-
+    = link_to "Sign Out", sign_out_path
     = yield
