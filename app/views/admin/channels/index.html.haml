@@ -1,0 +1,11 @@
+%h2 Channels
+= link_to "Add New Channel", new_admin_channel_path, :class => "small-button"
+.section
+  %table.datatable
+    %thead
+      %tr
+        %th Name
+    %tbody
+      - @channel.each do |channel|
+        %tr
+          %td= link_to channel.name, [:admin, channel]

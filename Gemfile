@@ -8,14 +8,15 @@ gem 'rails', '3.2.12'
 gem 'pg', '~> 0.14'
 gem 'bourbon', '~> 2.1.1'
 gem 'haml'
-gem 'formtastic'
+gem "formtastic", "1.2.4"
 gem 'country-select'
 gem 'carrierwave'
 gem 'devise'
 gem 'acts_as_previous_next'
 gem "fog", "~> 1.3.1"
 gem 'tinymce-rails', '3.5.6'
-
+gem "friendly_id", "3.3.0.rc2"
+gem "kaminari"
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

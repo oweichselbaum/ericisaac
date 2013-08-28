@@ -1,5 +1,8 @@
 Ericisaac::Application.routes.draw do
 
+  resources :users
+
+
   devise_for :admins,
              :controllers => {
                  :passwords => "passwords",
@@ -15,6 +18,7 @@ Ericisaac::Application.routes.draw do
   match 'admin', :to => 'admin#index'
 
   namespace :admin do
-
+    resources :channels
   end
+
 end

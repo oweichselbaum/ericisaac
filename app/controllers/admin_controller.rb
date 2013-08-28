@@ -6,4 +6,8 @@ class AdminController < ApplicationController
   def index
   end
 
+  def channels
+    @channels = Channel.all
+  end
+
 end

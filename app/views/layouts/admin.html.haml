@@ -1,16 +1,39 @@
 !!!
 %html
   %head
-    %title Eric Isaac Admin
+    -#%title Eric Isaac Admin
     = stylesheet_link_tag "application", :media => "all"
-    = javascript_include_tag "application"
+    = javascript_include_tag "jquery-152.min.js"
+    = javascript_include_tag "jquery-ui-1811.min.js"
+    = javascript_include_tag "admin"
     = csrf_meta_tags
   %body{:class => "admin #{body_classes}" }
+    .container
+      %header#main_header
+        -#= link_to "eric<span>isaac</span> photography admin".html_safe, admin_path
+      .clear
+      %aside#adminSide
+        %nav
+          %ul
+            %li.first
+              = link_to 'Channels',  admin_channels_path
+              %ul
+                - Channel.find_each do |channel|
+                  %li
+                    = link_to channel.name.titleize, admin_channel_path(channel)
+            %li
+              = link_to 'Photographs',  "#"
+            %li
+              = link_to 'Bio', '#'
+            %li
+              = link_to 'Contact',  "#"
+            %li
+              = link_to 'Logout', sign_out_path
+      .clear
 
-    #flash
-      %p.notice= notice
-      %p.alert= alert
+      #flash
+        %p.notice= notice
+        %p.alert= alert
 
-    %h1 Admin
-    = link_to "Sign Out", sign_out_path
-    = yield
+      %section{:id => @actionClass, :class => 'main_content'}
+        = yield

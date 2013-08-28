@@ -1,0 +1,8 @@
+= semantic_form_for [:admin, @channel] do |f|
+  = f.inputs do
+    = f.inputs :name, :required => true
+    = f.inputs :title, :required => true
+    = f.inputs :keywords, :required => true
+    = f.inputs :description, :required => true
+  = f.buttons do
+    = f.submit "Submit"
