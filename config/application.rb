@@ -60,5 +60,11 @@ module Ericisaac
     config.assets.version = '1.0'
 
     config.assets.initialize_on_precompile = false
+
+    config.assets.precompile += %w(
+      "jquery-152.min.js"
+      "jquery-ui-1811.min.js"
+    ).compact.map(&:strip).uniq
+
   end
 end
