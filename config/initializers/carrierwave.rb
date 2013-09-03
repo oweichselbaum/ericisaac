@@ -6,8 +6,8 @@ CarrierWave.configure do |config|
     :region                 => 'us-east-1'  # optional, defaults to 'us-east-1'
   }
 
-  config.fog_directory  = "ericisaac"                   # required
-  config.asset_host       = "http://s3.amazonaws.com/ericisaac"            # optional, defaults to nil
+  config.fog_directory  = "ericisaacsite"                   # required
+  config.asset_host       = "http://s3.amazonaws.com/ericisaacsite"            # optional, defaults to nil
   config.fog_public     = true                                 # optional, defaults to true
   config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}  # optional, defaults to {}
 end

@@ -1,0 +1,17 @@
+%h2 #{@photo.name.titleize}
+
+.section.titleized
+  %h4 Landing Page
+  .section-body
+    %dl
+      %dt Channel:
+      %dd
+        %b
+          = @photo.channel.name.titleize
+
+      %dt Photo:
+      %dd= image_tag(@photo.main_image) if @photo.main_image.present?
+
+    = link_to "Edit Photo", edit_admin_photo_path(@photo), :class => "small-button"
+    = button_to "Delete Photo", admin_photo_path(@photo), :method => :delete, :class => "small-button", :confirm => "Are you sure you want to delete this photo?"
+

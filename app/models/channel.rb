@@ -3,6 +3,8 @@ class Channel < ActiveRecord::Base
   has_friendly_id :name, :use_slug => true, :strip_non_ascii => true
   attr_accessible :name, :title, :description, :keywords
 
+  has_many :photos
+
   validates :name, :presence => true, :uniqueness => true
   validates :title, :description, :keywords, :presence => true
 

@@ -19,6 +19,7 @@ Ericisaac::Application.routes.draw do
 
   namespace :admin do
     resources :channels
+    resources :photos
   end
 
 end
