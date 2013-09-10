@@ -130,5 +130,7 @@ $(document).ready(function () {
         $("#search_form").data()['send_to_server'] = "1";
         $("#search_form").submit();
     });
+
 });
+
 

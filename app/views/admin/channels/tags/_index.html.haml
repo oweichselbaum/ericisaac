@@ -1,6 +1,0 @@
-%p Drag and drop to reorder. The first four will always show on the channel landing page.
-%ol{"data-sort-path" => sort_admin_channel_tags_path(channel), "data-content-key" => "channel-tags"}
-  - channel.channel_tags.each do |channel_tag|
-    %li[channel_tag]
-      = channel_tag.name
-      = link_to "Remove", admin_channel_tag_path(channel_tag.channel, channel_tag), :method => :delete, :confirm => "Are you sure?", "data-remote" => true

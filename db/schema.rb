@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130910151136) do
+ActiveRecord::Schema.define(:version => 20130910204040) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -42,6 +42,17 @@ ActiveRecord::Schema.define(:version => 20130910151136) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "channel_photos", :force => true do |t|
+    t.integer  "photo_id"
+    t.integer  "channel_id"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "channel_photos", ["channel_id"], :name => "index_channel_photos_on_channel_id"
+  add_index "channel_photos", ["photo_id"], :name => "index_channel_photos_on_photo_id"
+
   create_table "channels", :force => true do |t|
     t.string   "name"
     t.string   "title"
@@ -57,6 +68,13 @@ ActiveRecord::Schema.define(:version => 20130910151136) do
   create_table "contacts", :force => true do |t|
     t.string   "phone"
     t.string   "email"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "photo_tags", :force => true do |t|
+    t.integer  "photo_id"
+    t.integer  "tag_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -80,6 +98,12 @@ ActiveRecord::Schema.define(:version => 20130910151136) do
 
   add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
   add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"

@@ -1,0 +1,11 @@
+%h2 Tags
+= link_to "Add New Tag", new_admin_tag_path, :class => "small-button"
+.section
+  %table.datatable
+    %thead
+      %tr
+        %th Name
+    %tbody
+      - @tags.each do |tag|
+        %tr
+          %td= link_to tag.name, [:admin, tag]

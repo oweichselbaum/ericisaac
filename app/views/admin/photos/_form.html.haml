@@ -1,10 +1,11 @@
 = semantic_form_for [:admin, @photo] do |f|
   = f.inputs do
     = f.inputs :name, :required => true
-    = f.input :channel, :collection => Channel.all.sort_by {|b| b[:name]}, :required => true, :label => "Select a channel for this photo"
+    = f.input :channels, :as => :check_boxes , :collection => Channel.all.sort_by {|b| b[:name]}, :required => true, :label => "Select a channel for this photo"
+    %hr
+    = f.input :tags, :as => :check_boxes, :collection => Tag.all.sort_by {|b| b[:name]}
     = f.input :main_image, :as => :file
     = image_tag(f.object.main_image) if f.object.main_image.present?
   = f.buttons do
-    = f.submit "Submit"
+    = f.submit
 
-= link_to "Cancel", admin_photo_path(@photo), :class => "small-button"

@@ -10,7 +10,10 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require jquery_ujs
 //= require tinymce-jquery
+//= require update_content
 //= require jquery.dataTables
 //= require rails.js
+//= require faqs.js.coffee
 //= require new_admin

@@ -3,3 +3,5 @@
 .section.titleized
 
   = render 'form', :photo => @photo
+
+  = link_to "Cancel", admin_photo_path(@photo), :class => "small-button"

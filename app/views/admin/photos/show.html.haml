@@ -7,11 +7,18 @@
       %dt Channel:
       %dd
         %b
-          = @photo.channel.name.titleize
+          = @photo.channels.collect {|x| x.name}.join(", ").titleize
+      %br
+
+      %dt Tags:
+      %dd= @photo.tags.collect {|x| x.name}.join(", ")
+      %br
 
       %dt Photo:
       %dd= image_tag(@photo.main_image) if @photo.main_image.present?
 
+
     = link_to "Edit Photo", edit_admin_photo_path(@photo), :class => "small-button"
+    = link_to "Cancel", admin_photos_path, :class => "small-button"
     = button_to "Delete Photo", admin_photo_path(@photo), :method => :delete, :class => "small-button", :confirm => "Are you sure you want to delete this photo?"
 

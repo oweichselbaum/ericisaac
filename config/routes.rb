@@ -18,10 +18,17 @@ Ericisaac::Application.routes.draw do
   match 'admin', :to => 'admin#index'
 
   namespace :admin do
-    resources :channels
+    resources :channels do
+      resources :photos do
+        collection do
+          post :sort
+        end
+      end
+    end
     resources :photos
     resources :bios
     resources :contacts
+    resources :tags
   end
 
 end

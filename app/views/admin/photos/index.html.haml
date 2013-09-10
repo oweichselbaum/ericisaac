@@ -5,7 +5,9 @@
     %thead
       %tr
         %th Name
+        %th Tags
     %tbody
       - @photo.each do |photo|
         %tr
           %td= link_to photo.name, [:admin, photo]
+          %td= photo.tags.collect {|x| x.name}.join(", ")
