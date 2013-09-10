@@ -25,12 +25,12 @@ class Admin::PhotosController < AdminController
 
   def update
     if @photo.update_attributes(params[:photo])
-      notice = "#{@Photo.name.titleize} Photo Updated."
+      notice = "#{@photo.name.titleize} Photo Updated."
 
       respond_to do |format|
         format.html do
           flash[:notice] = notice
-          redirect_to admin_photo_path(@Photo)
+          redirect_to admin_photo_path(@photo)
         end
 
       end

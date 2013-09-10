@@ -1,0 +1,14 @@
+#contact
+  %h2 Contact Info
+  - @contacts.each do |contact|
+    = link_to "Edit Contact Info", edit_admin_contact_path(contact), :class => "small-button"
+
+  %h3 Contact Info
+  - if @contact.phone.present?
+    %p
+      Phone Number:
+      = @contact.phone
+  - if @contact.email.present?
+    %p
+      Email:
+      = @contact.email

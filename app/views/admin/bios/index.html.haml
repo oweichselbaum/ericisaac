@@ -1,0 +1,22 @@
+#bio
+  %h2 Bio
+  - @bios.each do |bio|
+    = link_to "Edit the Bio page", edit_admin_bio_path(bio), :class => "small-button"
+
+  %h3.seo SEO Information:
+  - if @bio.title.present?
+    %p
+      Page Title:
+      = @bio.title
+  - if @bio.keywords.present?
+    %p
+      Keywords:
+      = @bio.keywords
+  - if @bio.description.present?
+    %p
+      Description:
+      = @bio.description
+      
+
+-#.main_section
+  = render 'whoweare/whoweare', :bio => @bio

@@ -1,0 +1,8 @@
+= semantic_form_for [:admin, @contact] do |f|
+  = f.inputs do
+    = f.inputs :phone
+    = f.inputs :email
+  = f.buttons do
+    = f.submit
+
+= link_to "Cancel", admin_contacts_path, :class => "small-button"

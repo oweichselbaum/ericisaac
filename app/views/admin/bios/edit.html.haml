@@ -1,0 +1,14 @@
+= semantic_form_for [:admin, @bio] do |f|
+  = f.inputs do
+    = f.inputs :bio_title
+    = f.inputs :body, :label => "Bio Copy"
+    = f.input :bio_image, :as => :file
+    = image_tag(f.object.bio_image) if f.object.bio_image.present?
+    %h3 SEO Modules
+    = f.inputs :title
+    = f.inputs :keywords
+    = f.inputs :description
+  = f.buttons do
+    = f.submit
+
+= link_to "Cancel", admin_bios_path, :class => "small-button"
