@@ -5,7 +5,9 @@
     %thead
       %tr
         %th Name
+        %th Number of Photos
     %tbody
       - @channel.each do |channel|
         %tr
           %td= link_to channel.name, [:admin, channel]
+          %td= channel.photos.count

@@ -5,7 +5,9 @@
     %thead
       %tr
         %th Name
+        %th Number of Photos
     %tbody
       - @tags.each do |tag|
         %tr
           %td= link_to tag.name, [:admin, tag]
+          %td= tag.photos.count
