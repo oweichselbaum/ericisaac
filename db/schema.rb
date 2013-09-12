@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130910204040) do
+ActiveRecord::Schema.define(:version => 20130912154144) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -80,9 +80,11 @@ ActiveRecord::Schema.define(:version => 20130910204040) do
   end
 
   create_table "photos", :force => true do |t|
-    t.string  "name"
-    t.string  "main_image"
-    t.integer "channel_id"
+    t.string   "name"
+    t.string   "main_image"
+    t.integer  "channel_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "photos", ["channel_id"], :name => "index_photos_on_channel_id"

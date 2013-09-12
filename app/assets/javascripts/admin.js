@@ -15,5 +15,5 @@
 //= require update_content
 //= require jquery.dataTables
 //= require rails.js
-//= require faqs.js.coffee
+//= require sort.js.coffee
 //= require new_admin

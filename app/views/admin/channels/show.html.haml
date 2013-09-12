@@ -15,11 +15,14 @@
       %hr
 
       %p Drag and drop to reorder.
-      %ol#faqs{"data-update-url" => sort_admin_channel_photos_path(@channel)}
-        - @channel.channel_photos.each do |faq|
-          = content_tag_for :li, faq do
-            %span.handle [drag]
-            = faq.name
+      %ol#sortable{"data-update-url" => sort_admin_channel_photos_path(@channel)}
+        - @channel.channel_photos.each do |photo|
+          = content_tag_for :li, photo, :class => cycle("odd", "even") do
+            %ul
+              %li
+                %span.handle [drag]
+              %li
+                = link_to photo.name, edit_admin_photo_path(photo)
 
 
     = link_to "Edit Channel", edit_admin_channel_path(@channel), :class => "small-button"

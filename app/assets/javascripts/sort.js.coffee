@@ -1,5 +1,5 @@
 jQuery ->
-  $('#faqs').sortable
+  $('#sortable').sortable
     axis: 'y'
     handle: '.handle'
     update: ->

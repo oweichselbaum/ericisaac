@@ -92,6 +92,9 @@ body {
           border: 1px solid black;
           padding: 10px;
         }
+        th {
+          cursor: pointer;
+        }
       }
     }
 
@@ -225,10 +228,35 @@ body {
         color: blue;
       }
     }
-    #faqs .handle {
-      font-size: 12px;
-      color: #777;
-      cursor: move;
+    #sortable {
+      border: 1px solid #999;
+      li {
+        padding: 10px 0 0;
+        border-bottom: 1px solid #999;
+        &:last-child {
+          border-bottom: 0;
+        }
+        &.even {
+          background-color: #F9F9F9;
+        }
+        ul {
+          @include clearfix;
+          margin-top: -20px;
+          padding: 0 0 10px;
+          li {
+            float: left;
+            width: auto;
+            list-style: none;
+            padding: 0 10px 0;
+            border: 0;
+          }
+        }
+      }
+      .handle {
+        font-size: 12px;
+        color: #777;
+        cursor: move;
+      }
     }
   }
 }

@@ -1,0 +1,20 @@
+%h2 Latest Photos Added
+= link_to "Add New Photo", new_admin_photo_path, :class => "small-button"
+.section
+  %table.datatable{"data-column-to-sort-by" => 2}
+    %thead
+      %tr
+        %th Name
+        %th Channel
+        %th Tags
+        %th{"data-sort-type" => "date"} Last Updated
+    %tbody
+      - @photo.each do |photo|
+        %tr
+          %td= link_to photo.name, edit_admin_photo_path(photo)
+          %td
+            = photo.channels.collect { |channel| link_to channel.name.titleize, edit_admin_channel_path(channel) }.join(", ").html_safe
+          %td
+            = photo.tags.collect { |tag| link_to tag.name, edit_admin_tag_path(tag) }.join(", ").html_safe
+          %td
+            = photo.updated_at.try(:to_s, :admin_datetime)

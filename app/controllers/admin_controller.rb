@@ -4,6 +4,7 @@ class AdminController < ApplicationController
   layout 'admin'
 
   def index
+    @photo = Photo.all
   end
 
   def channels
