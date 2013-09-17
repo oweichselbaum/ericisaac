@@ -1,0 +1,25 @@
+@import 'bourbon';
+
+.footer {
+  width: 100%;
+  .black {
+    background: black;
+    color: white;
+    padding: 10px 0 0;
+    @include clearfix;
+    height: 150px;
+    .footer_wrapper {
+      width: 1280px;
+      margin: 0 auto;
+      .copyright {
+        float: left;
+      }
+      .contact {
+        float: right;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+}

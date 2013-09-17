@@ -1,0 +1,10 @@
+.footer
+  .black
+    .footer_wrapper
+      .copyright
+        == &#169;#{Time.now.year} eric isaac photography. all rights reserved
+
+      .contact
+        = Contact.first.phone
+        - email = Contact.first.email
+        = link_to email, "mailto:#{email}"

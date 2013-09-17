@@ -1,0 +1,38 @@
+@import 'bourbon';
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: black;
+  padding: 0;
+  margin: 0;
+  background: #DDDDDD;
+  a {
+    color: black;
+    text-decoration: none;
+    @include transition;
+    &:hover {
+      color: #8B8B8B;
+      text-decoration: underline;
+    }
+  }
+  p {
+    margin: 0;
+  }
+  .body {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -150px;
+    .content {
+      padding: 230px 78px 0;
+    }
+  }
+  .footer, .push {
+    height: 150px;
+  }
+}

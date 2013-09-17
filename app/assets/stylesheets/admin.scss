@@ -1,9 +1,10 @@
 @import "bourbon";
 
 body {
-  background: #DDDDDD;
-  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   &.admin {
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    padding: 0;
+    font-size: 17px;
     .container {
       width: 1280px;
       margin: 0 auto;
