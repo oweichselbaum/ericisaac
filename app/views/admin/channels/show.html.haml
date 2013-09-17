@@ -21,17 +21,17 @@
         %li Photo
         %li Image Size
       %ol#sortable{"data-update-url" => sort_admin_channel_photos_path(@channel)}
-        - @channel.channel_photos.each do |cp|
-          = content_tag_for :li, cp, :class => cycle("odd", "even") do
+        - @channel.photos.each do |photo|
+          = content_tag_for :li, photo, :class => cycle("odd", "even") do
             %ul
               %li
                 %span.handle [drag]
               %li
-                = link_to cp.name, edit_admin_photo_path(cp.photo)
+                = link_to photo.name, edit_admin_photo_path(photo)
               %li
-                = image_tag (cp.photo.main_image), :style => ("width: 100px;") if cp.photo.main_image.present?
+                = image_tag (photo.main_image), :style => ("width: 100px;") if photo.main_image.present?
               %li
-                = cp.photo.image_size
+                = photo.image_size
 
 
     = link_to "Edit Channel", edit_admin_channel_path(@channel), :class => "small-button"
