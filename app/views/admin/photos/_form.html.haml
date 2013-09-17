@@ -5,7 +5,7 @@
     %hr
     = f.input :tags, :as => :check_boxes, :collection => Tag.all.sort_by {|b| b[:name]}
     = f.input :main_image, :as => :file
-    = image_tag(f.object.main_image) if f.object.main_image.present?
+    = image_tag(f.object.main_image, :style => "width: 400px;") if f.object.main_image.present?
   = f.buttons do
     = f.submit
 

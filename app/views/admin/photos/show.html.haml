@@ -15,7 +15,7 @@
       %br
 
       %dt Photo:
-      %dd= image_tag(@photo.main_image) if @photo.main_image.present?
+      %dd= image_tag(@photo.main_image, :style => ("width: 200px;")) if @photo.main_image.present?
 
 
     = link_to "Edit Photo", edit_admin_photo_path(@photo), :class => "small-button"
