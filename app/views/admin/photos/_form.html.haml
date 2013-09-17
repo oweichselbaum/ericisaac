@@ -2,6 +2,7 @@
   = f.inputs do
     = f.inputs :name, :required => true
     = f.input :channels, :as => :check_boxes , :collection => Channel.all.sort_by {|b| b[:name]}, :required => true, :label => "Select a channel for this photo"
+    = f.input :image_size, :as => :select, :label => "Image Size", :collection => ["small", "large"]
     %hr
     = f.input :tags, :as => :check_boxes, :collection => Tag.all.sort_by {|b| b[:name]}
     = f.input :main_image, :as => :file

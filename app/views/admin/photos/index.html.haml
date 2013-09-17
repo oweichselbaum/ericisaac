@@ -8,6 +8,7 @@
         %th Channels
         %th Tags
         %th Photo
+        %th Image Size
         %th{"data-sort-type" => "date"} Last Updated
     %tbody
       - @photo.each do |photo|
@@ -19,4 +20,6 @@
             = photo.tags.collect { |tag| link_to tag.name, edit_admin_tag_path(tag) }.join(", ").html_safe
           %td
             = image_tag (photo.main_image), :style => ("width: 100px;") if photo.main_image.present?
+          %td
+            = photo.image_size
           %td= photo.updated_at.try(:to_s, :admin_datetime)

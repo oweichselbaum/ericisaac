@@ -11,7 +11,13 @@
       %br
 
       %dt Tags:
-      %dd= @photo.tags.collect {|x| x.name}.join(", ")
+      %dd
+        %b= @photo.tags.collect {|x| x.name}.join(", ")
+      %br
+
+      %dt Image Size:
+      %dd
+        %b= @photo.image_size
       %br
 
       %dt Photo:

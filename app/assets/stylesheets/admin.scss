@@ -245,6 +245,20 @@ body {
           }
         }
       }
+      ul.title {
+        margin: 0 0 10px;
+        padding: 0 0 0 132px;
+        list-style: none;
+        font-weight: 600;
+        @include clearfix;
+        li {
+          float: left;
+          width: 20%;
+          &:first-child {
+            width: 5%;
+          }
+        }
+      }
     }
     form {
       span.slug {
@@ -253,6 +267,7 @@ body {
     }
     #sortable {
       border: 1px solid #999;
+      clear: both;
       li {
         padding: 10px 0 0;
         border-bottom: 1px solid #999;

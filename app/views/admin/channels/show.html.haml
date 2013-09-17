@@ -15,6 +15,11 @@
       %hr
 
       %p Drag and drop to reorder.
+      %ul.title
+        %li
+        %li Title
+        %li Photo
+        %li Image Size
       %ol#sortable{"data-update-url" => sort_admin_channel_photos_path(@channel)}
         - @channel.channel_photos.each do |cp|
           = content_tag_for :li, cp, :class => cycle("odd", "even") do
@@ -25,6 +30,8 @@
                 = link_to cp.name, edit_admin_photo_path(cp.photo)
               %li
                 = image_tag (cp.photo.main_image), :style => ("width: 100px;") if cp.photo.main_image.present?
+              %li
+                = cp.photo.image_size
 
 
     = link_to "Edit Channel", edit_admin_channel_path(@channel), :class => "small-button"
