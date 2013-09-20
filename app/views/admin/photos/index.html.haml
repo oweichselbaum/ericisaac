@@ -1,7 +1,7 @@
 %h2 Photos
 = link_to "Add New Photo", new_admin_photo_path, :class => "small-button"
 .section
-  %table.datatable{"data-column-to-sort-by" => 3}
+  %table.datatable{"data-column-to-sort-by" => 5}
     %thead
       %tr
         %th Name
@@ -9,7 +9,7 @@
         %th Tags
         %th Photo
         %th Image Size
-        %th{"data-sort-type" => "date"} Last Updated
+        %th{"data-sort-type" => "date"} Created At
     %tbody
       - @photo.each do |photo|
         %tr
@@ -22,4 +22,4 @@
             = image_tag (photo.main_image), :style => ("width: 100px;") if photo.main_image.present?
           %td
             = photo.image_size
-          %td= photo.updated_at.try(:to_s, :admin_datetime)
+          %td= photo.created_at.try(:to_s, :admin_datetime)

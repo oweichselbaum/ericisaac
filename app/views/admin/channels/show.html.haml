@@ -13,7 +13,10 @@
 
     - if @channel.channel_photos.present?
       %hr
-
+      %p
+        Number of Photos in this Channel:
+        %b
+          = @channel.photos.count
       %p Drag and drop to reorder.
       %ul.title
         %li
