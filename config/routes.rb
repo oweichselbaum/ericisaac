@@ -17,7 +17,7 @@ Ericisaac::Application.routes.draw do
 
   match 'admin', :to => 'admin#index'
 
-  resources :bio, :only => :index
+  resources :bio, :only => :index, :as => :bio
 
   namespace :admin do
     resources :channels do
