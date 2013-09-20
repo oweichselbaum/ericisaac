@@ -17,8 +17,16 @@
     %ul
       - Channel.find_each do |channel|
         %li
-          = link_to channel.name, "#"
+          = link_to channel.name, channel_path(channel)
       %li
-        = link_to "bio", "#"
+        = link_to "bio", bio_path
       %li
         = link_to "blog", "#"
+  - unless controller.controller_name == "bio"
+    .tag_names
+      %ul
+        - tags = @channel.photos.collect {|x| x.tags}.flatten
+        - tag_name = tags.collect {|x| x.name}.uniq
+        - tag_name.sort_by {|x| x}.each do |name|
+          %li
+            = link_to name, "#"

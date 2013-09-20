@@ -17,6 +17,8 @@ Ericisaac::Application.routes.draw do
 
   match 'admin', :to => 'admin#index'
 
+  resources :bio, :only => :index
+
   namespace :admin do
     resources :channels do
       resources :photos do
@@ -31,4 +33,5 @@ Ericisaac::Application.routes.draw do
     resources :tags
   end
 
+  match '/:id', :to => "channels#show", :as => :channel
 end

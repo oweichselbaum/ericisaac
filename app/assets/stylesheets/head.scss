@@ -52,7 +52,7 @@
       }
     }
   }
-  .navigation {
+  .navigation, .tag_names {
     width: 1280px;
     margin: 0 auto;
     border-bottom: 1px solid black;
@@ -75,6 +75,17 @@
         &:last-child {
           margin: 0;
         }
+      }
+    }
+  }
+  .tag_names {
+    box-shadow: 0 4px 2px -2px #bbbbbb;
+    -webkit-box-shadow: 0 4px 2px -2px #bbbbbb;
+    -moz-box-shadow: 0 4px 2px -2px #bbbbbb;
+    -ms-box-shadow: 0 4px 2px -2px #bbbbbb;
+    ul {
+      li {
+        font-size: 14px;
       }
     }
   }
