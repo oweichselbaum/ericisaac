@@ -177,6 +177,7 @@ body {
       @include inline-block;
       border: 0;
       font-size: 16px;
+      cursor: pointer;
     }
     form.button_to {
       @include inline-block;
@@ -207,6 +208,10 @@ body {
           @include inline-block;
           border: 0;
           font-size: 16px;
+          cursor: pointer;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
