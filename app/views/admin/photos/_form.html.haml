@@ -2,12 +2,11 @@
   = f.inputs do
     = f.inputs :name, :required => true
     = f.input :channels, :as => :check_boxes , :collection => Channel.all.sort_by {|b| b[:name]}, :required => true, :label => "Select a channel for this photo"
+    = f.input :main_image, :as => :file
     = f.input :image_size, :as => :select, :label => "Image Size", :collection => ["small", "large"]
     = f.input :image_type, :as => :select, :label => "Image Type", :collection => ["portrait", "landscape"]
-    %hr
+    = image_tag(f.object.main_image, :style => "width: 400px; position: absolute; top: 40px; right: 32px;") if f.object.main_image.present?
     = f.input :tags, :as => :check_boxes, :collection => Tag.all.sort_by {|b| b[:name]}
-    = f.input :main_image, :as => :file
-    = image_tag(f.object.main_image, :style => "width: 400px;") if f.object.main_image.present?
   = f.buttons do
     = f.submit
 

@@ -8,6 +8,6 @@ class Photo < ActiveRecord::Base
   has_many :channel_photos
   has_many :channels, :through => :channel_photos, :dependent => :destroy
 
-  validates :name, :presence => true, :uniqueness => true
+  validates :name, :presence => true
   validates :channels, :presence => true
 end
