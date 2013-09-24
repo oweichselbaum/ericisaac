@@ -63,8 +63,10 @@ module Ericisaac
 
     config.assets.precompile += %w(
       jquery-152.min.js
+      jquery-182.min.js
       jquery-ui-1811.min.js
       admin.js
+      application-list.js
     ).compact.map(&:strip).uniq
 
   end

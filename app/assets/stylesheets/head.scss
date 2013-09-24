@@ -5,6 +5,8 @@
   position: fixed;
   top: 0;
   left: 0;
+  background: #dddddd;
+  z-index: 9999;
   .white {
     background: white;
     width: 100%;
@@ -53,7 +55,7 @@
     }
   }
   .navigation, .tag_names {
-    width: 1280px;
+    width: 1345px;
     margin: 0 auto;
     border-bottom: 1px solid black;
     @include clearfix;

@@ -9,7 +9,9 @@
       = content_for(:meta_description)
 
     = stylesheet_link_tag "application", :media => 'all'
-    = javascript_include_tag "application"
+    = javascript_include_tag "jquery-182.min.js"
+    = javascript_include_tag "jquery-ui-1811.min.js"
+    = javascript_include_tag "application-list"
     = csrf_meta_tags
   %body{:class => body_classes}
     #fb-root

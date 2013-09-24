@@ -17,6 +17,8 @@ gem "fog", "~> 1.3.1"
 gem 'tinymce-rails', '3.5.6'
 gem "friendly_id", "3.3.0.rc2"
 gem "kaminari"
+
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -30,6 +32,12 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :development do
+  gem 'hirb'
+  gem 'wirble'
+  gem 'awesome_print'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

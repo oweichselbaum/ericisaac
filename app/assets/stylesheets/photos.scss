@@ -1,0 +1,47 @@
+@import 'bourbon';
+
+#photos_container {
+  margin-right: -10px;
+  .photo_wrapper {
+    margin: 0 10px 10px 0;
+    padding: 10px;
+    background: white;
+    overflow: hidden;
+    &.small {
+      &.portrait {
+        width: 510px;
+        height: 333px;
+        img {
+          //width: 510px;
+          //height: 333px;
+        }
+      }
+      &.landscape {
+        width: 239px;
+        height: 333px;
+        img {
+          //width: 253px;
+          //height: 333px;
+        }
+      }
+    }
+    &.large {
+      &.portrait {
+        width: 780px;
+        height: 450px;
+        img {
+          //width: 789px;
+          //height: 450px;
+        }
+      }
+      &.landscape {
+        width: 510px;
+        height: 647px;
+        img {
+          //width: 529px;
+          //height: 647px;
+        }
+      }
+    }
+  }
+}

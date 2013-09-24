@@ -1,0 +1,2 @@
+.photo_wrapper{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?} #{photo_tags(cp.photo) unless photo_tags(cp.photo).nil?} #{cp.position}", :'data-position' => cp.position}
+  = image_tag "/assets/grey.gif", :'data-original' => cp.photo.main_image.url, :class => "lazy"

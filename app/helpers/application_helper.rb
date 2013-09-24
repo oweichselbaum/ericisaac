@@ -7,4 +7,8 @@ module ApplicationHelper
        controller.action_name].compact.join(" ")
     end
   end
+  def photo_tags(photo)
+    tags = photo.tags.map {|x| x.name.tr(' ', '_')}.join(' ')
+    tags.to_s.downcase
+  end
 end

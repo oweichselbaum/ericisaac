@@ -1,13 +1,49 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// the compiled file.
-//
-// WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
-// GO AFTER THE REQUIRES BELOW.
-//
+function initiateIsotope() {
+    var $container = $('#photos_container');
+    var sortBy = $('#sort-by');
 
+    $container.isotope({
+        itemSelector: '.photo_wrapper',
+        masonry: {
+            columnWidth: 5
+        },
+        masonryHorizontal: {
+            rowHeight: 5
+        }
+    });
+}
+
+$(document).ready(function () {
+    $("img.lazy").lazyload({
+        effect: "fadeIn"
+    });
+
+    $('.portrait.small img').resizecrop({
+        width: 510,
+        height: 333,
+        vertical: "middle"
+    });
+
+    $('.portrait.large img').resizecrop({
+        width: 780,
+        height: 450,
+        vertical: "middle"
+    });
+
+    $('.landscape.small img').resizecrop({
+        width: 239,
+        height: 333,
+        vertical: "middle"
+    });
+
+    $('.landscape.large img').resizecrop({
+        width: 510,
+        height: 647,
+        vertical: "middle"
+    });
+
+});
+
+$(window).load(function () {
+    initiateIsotope()
+});

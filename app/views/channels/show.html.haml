@@ -1,2 +1,6 @@
 - content_for(:tags_nav) do
- = render 'shared/tags'
+  = render 'shared/tags'
+
+#photos_container
+  - @channel_photos.each do |cp|
+    = render "channel", :cp => cp
