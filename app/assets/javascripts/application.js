@@ -19,26 +19,34 @@ $(document).ready(function () {
     });
 
     $('.portrait.small img').resizecrop({
-        width: 510,
-        height: 333,
-        vertical: "middle"
-    });
-
-    $('.portrait.large img').resizecrop({
-        width: 780,
-        height: 450,
-        vertical: "middle"
-    });
-
-    $('.landscape.small img').resizecrop({
+//        width: 510,
+//        height: 333,
         width: 239,
         height: 333,
         vertical: "middle"
     });
 
-    $('.landscape.large img').resizecrop({
+    $('.portrait.large img').resizecrop({
+//        width: 780,
+//        height: 450,
         width: 510,
-        height: 647,
+        height: 696,
+        vertical: "middle"
+    });
+
+    $('.landscape.small img').resizecrop({
+//        width: 239,
+//        height: 333,
+        width: 510,
+        height: 333,
+        vertical: "middle"
+    });
+
+    $('.landscape.large img').resizecrop({
+        width: 780,
+        height: 450,
+//        width: 510,
+//        height: 696,
         vertical: "middle"
     });
 

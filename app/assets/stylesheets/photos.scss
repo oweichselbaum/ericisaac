@@ -9,7 +9,9 @@
     overflow: hidden;
     &.small {
       &.portrait {
-        width: 510px;
+        //width: 510px;
+        //height: 333px;
+        width: 239px;
         height: 333px;
         img {
           //width: 510px;
@@ -17,7 +19,9 @@
         }
       }
       &.landscape {
-        width: 239px;
+        //width: 239px;
+        //height: 333px;
+        width: 510px;
         height: 333px;
         img {
           //width: 253px;
@@ -27,16 +31,20 @@
     }
     &.large {
       &.portrait {
-        width: 780px;
-        height: 450px;
+        //width: 780px;
+        //height: 450px;
+        width: 510px;
+        height: 696px;
         img {
           //width: 789px;
           //height: 450px;
         }
       }
       &.landscape {
-        width: 510px;
-        height: 647px;
+        //width: 510px;
+        //height: 696px;
+        width: 780px;
+        height: 450px;
         img {
           //width: 529px;
           //height: 647px;
