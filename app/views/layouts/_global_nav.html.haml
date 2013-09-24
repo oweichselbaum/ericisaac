@@ -6,8 +6,7 @@
         = link_to "Follow @ericisaac", "https://twitter.com/ericisaac", :class =>"twitter-follow-button", :"data-show-count" => "false", :"data-show-screen-name" => "false"
         %script
           !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-      %h1
-        = link_to "eric<span>isaac</span><br /><span class='photo'>photography</span>".html_safe, root_url
+      = link_to "<h1>eric<span>isaac</span><br /><span class='photo'>photography</span></h1>".html_safe, root_url, :class => "logo"
       .info
         %p= Contact.first.phone
         %p
