@@ -74,6 +74,12 @@
         font-size: 22px;
         margin-right: 50px;
         text-transform: lowercase;
+        a {
+          @include transition(0);
+          &.selected {
+            color: #8B8B8B;
+          }
+        }
         &:last-child {
           margin: 0;
         }

@@ -17,7 +17,7 @@
     %ul
       - Channel.find_each do |channel|
         %li
-          = link_to channel.name, channel_path(channel)
+          = link_to channel.name, channel_path(channel), :class => channel.name.gsub(" ", "-")
       %li
         = link_to "bio", bio_index_path
       %li
