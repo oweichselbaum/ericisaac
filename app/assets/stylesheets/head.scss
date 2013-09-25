@@ -5,8 +5,37 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #dddddd;
   z-index: 9999;
+  &.stuck {
+    .white {
+      height: 34px;
+      background: black;
+      .nav_wrapper {
+        .logo {
+          h1 {
+            font-size: 43px;
+            padding: 0;
+            color: white;
+          }
+          &:hover {
+            h1 {
+              color: #8B8B8B;
+            }
+
+          }
+        }
+        .info {
+          color: white;
+          a {
+            color: white;
+            &:hover {
+              color: #8B8B8B;
+            }
+          }
+        }
+      }
+    }
+  }
   .white {
     background: white;
     width: 100%;
@@ -17,7 +46,11 @@
     -webkit-box-shadow: 0 4px 2px -2px #bbbbbb;
     -moz-box-shadow: 0 4px 2px -2px #bbbbbb;
     -ms-box-shadow: 0 4px 2px -2px #bbbbbb;
+    overflow: hidden;
+    z-index: 2;
+    height: 90px;
     @include clearfix;
+    @include transition;
     .nav_wrapper {
       width: 1280px;
       margin: 0 auto;
@@ -32,6 +65,8 @@
           line-height: 39px;
           margin: 0;
           padding-top: 5px;
+          text-align: center;
+          @include transition;
           span {
             font-weight: 600;
             &.photo {
@@ -45,10 +80,10 @@
         }
       }
       .info {
-        float: right;
-        text-align: right;
-        margin-top: -40px;
-        padding-top: 10px;
+        position: absolute;
+        bottom: 10px;
+        right: 80px;
+        @include transition;
       }
       .social {
         position: absolute;
@@ -59,8 +94,12 @@
   }
   .navigation, .tag_names {
     min-width: 1345px;
-    margin: 0 60px 0 40px;
+    margin: 0 60px 0 37px;
     border-bottom: 1px solid black;
+    background: #dddddd;
+    z-index: 1;
+    opacity: .9;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.9)";
     @include clearfix;
     ul {
       position: relative;
@@ -69,6 +108,7 @@
       padding: 0;
       list-style: none;
       @include clearfix;
+      margin: 10px 0;
 
       li {
         position: relative;

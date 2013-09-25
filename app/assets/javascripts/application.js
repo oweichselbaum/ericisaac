@@ -71,7 +71,24 @@ $(document).ready(function () {
             thumbs: {
                 width: 50,
                 height: 50
+            },
+            overlay: {
+                locked: false
             }
+        }
+    });
+
+    $(window).scroll(function () {
+        // what is the y position of the scroll?
+        var y = $(window).scrollTop();
+        // whether that's below the start of article?
+        if (y >= 500) {
+            // if so, add the fixed class
+            $('.nav').addClass('stuck');
+        }
+        else {
+            // otherwise, remove it
+            $('.nav').removeClass('stuck');
         }
     });
 });

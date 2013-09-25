@@ -11,47 +11,102 @@
     -webkit-box-shadow: 0 4px 2px -2px #bbbbbb;
     -moz-box-shadow: 0 4px 2px -2px #bbbbbb;
     -ms-box-shadow: 0 4px 2px -2px #bbbbbb;
+    position: relative;
     &.small {
       &.portrait {
-        //width: 510px;
-        //height: 333px;
         width: 239px;
         height: 333px;
-        img {
-          //width: 510px;
-          //height: 333px;
+        .caption {
+          width: 84.5%;
+          .black {
+            width: 239px;
+          }
+        }
+        &.isotope-hidden {
+          height: 0;
+          padding: 0;
+          margin: 0;
         }
       }
       &.landscape {
-        //width: 239px;
-        //height: 333px;
         width: 510px;
         height: 333px;
-        img {
-          //width: 253px;
-          //height: 333px;
+        .caption {
+          width: 92.5%;
+          .black {
+            width: 510px;
+          }
+        }
+        &.isotope-hidden {
+          height: 0;
+          padding: 0;
+          margin: 0;
         }
       }
     }
     &.large {
       &.portrait {
-        //width: 780px;
-        //height: 450px;
         width: 510px;
         height: 696px;
-        img {
-          //width: 789px;
-          //height: 450px;
+        .caption {
+          width: 92.5%;
+          .black {
+            width: 510px;
+          }
+        }
+        &.isotope-hidden {
+          height: 0;
+          padding: 0;
+          margin: 0;
         }
       }
       &.landscape {
-        //width: 510px;
-        //height: 696px;
         width: 780px;
         height: 450px;
-        img {
-          //width: 529px;
-          //height: 647px;
+        .caption {
+          width: 84.5%;
+          .black {
+            width: 780px;
+          }
+        }
+        &.isotope-hidden {
+          height: 0;
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+    a {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      .caption {
+        position: absolute;
+        bottom: -70px;
+        padding: 10px;
+        @include transition;
+        .black {
+          background: black;
+          opacity: .6;
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.6)";
+          display: block;
+          height: 70px;
+          margin-left: -10px;
+          bottom: 0;
+          position: absolute;
+        }
+        p {
+          color: white;
+          font-size: 19px;
+          position: absolute;
+          bottom: 10px;
+        }
+      }
+    }
+    &:hover {
+      a {
+        .caption {
+          bottom: 0;
         }
       }
     }
