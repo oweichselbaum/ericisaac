@@ -59,6 +59,19 @@ $(document).ready(function () {
         $container.isotope({ filter: selector });
         setTimeout(onAnimationFinished, 600);
         return false;
-    })
+    });
 
+    $(".fancybox-thumb").fancybox({
+        openEffect: 'elastic',
+        closeEffect: 'elastic',
+        helpers: {
+            title: {
+                type: 'outside'
+            },
+            thumbs: {
+                width: 50,
+                height: 50
+            }
+        }
+    });
 });

@@ -310,6 +310,13 @@ body {
         color: #777;
         cursor: move;
       }
+      .commands {
+        button {
+          display: block;
+          width: 45px;
+          margin-bottom: 10px;
+        }
+      }
     }
   }
 }

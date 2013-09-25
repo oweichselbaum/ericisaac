@@ -7,6 +7,10 @@
     padding: 10px;
     background: white;
     overflow: hidden;
+    box-shadow: 0 4px 2px -2px #bbbbbb;
+    -webkit-box-shadow: 0 4px 2px -2px #bbbbbb;
+    -moz-box-shadow: 0 4px 2px -2px #bbbbbb;
+    -ms-box-shadow: 0 4px 2px -2px #bbbbbb;
     &.small {
       &.portrait {
         //width: 510px;

@@ -27,7 +27,7 @@
         - @channel.channel_photos.each do |cp|
           = content_tag_for :li, cp, :class => cycle("odd", "even") do
             %ul
-              %li
+              %li.ordering
                 %span.handle [drag]
               %li
                 = link_to cp.photo.name, edit_admin_photo_path(cp.photo)
@@ -35,8 +35,12 @@
                 = image_tag (cp.photo.main_image), :style => ("width: 100px;") if cp.photo.main_image.present?
               %li
                 = cp.photo.image_size
+              %li
+                .rightfloat.commands
+                  = button_tag 'up', :value => 'up'
+                  = button_tag 'down', :value => 'down'
 
-
+    = button_tag "Submit Order", :class => "sort_submit small-button"
     = link_to "Edit Channel", edit_admin_channel_path(@channel), :class => "small-button"
     = button_to "Delete Channel", admin_channel_path(@channel), :method => :delete, :class => "small-button", :confirm => "Are you sure you want to delete this channel?"
 

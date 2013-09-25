@@ -2,5 +2,5 @@
   = render 'shared/tags'
 
 #photos_container
-  - @channel_photos.each do |cp|
-    = render "channel", :cp => cp
+  - @channel_photos.each_with_index do |cp, i|
+    = render "channel", :cp => cp, :i => i
