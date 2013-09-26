@@ -1,7 +1,11 @@
 !!!
 %html
   %head
-    %title Eric Isaac Homepage
+    - if content_for?(:title)
+      = content_for(:title)
+    - else
+      %title Eric Isaac Photography
+
     - if content_for?(:meta_keywords)
       = content_for(:meta_keywords)
 
