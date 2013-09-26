@@ -6,7 +6,6 @@
     margin: 0 10px 10px 0;
     padding: 10px;
     background: white;
-    overflow: hidden;
     box-shadow: 0 4px 2px -2px #bbbbbb;
     -webkit-box-shadow: 0 4px 2px -2px #bbbbbb;
     -moz-box-shadow: 0 4px 2px -2px #bbbbbb;
@@ -15,8 +14,12 @@
     .fb-like {
       position: absolute;
       z-index: 1;
+      opacity: 0;
+      -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+      @include transition;
     }
     &.small {
+      z-index: 0;
       &.portrait {
         width: 239px;
         height: 333px;
@@ -49,6 +52,7 @@
       }
     }
     &.large {
+      z-index: 0;
       &.portrait {
         width: 510px;
         height: 696px;
@@ -82,10 +86,6 @@
     }
     img {
       @include transition;
-      &:hover {
-        opacity: .5;
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.5)";
-      }
     }
     a {
       position: relative;
@@ -115,6 +115,15 @@
       }
     }
     &:hover {
+      z-index: 1;
+      .fb-like {
+        opacity: 1;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+      }
+      img {
+        opacity: .5;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.5)";
+      }
       a {
         .caption {
           bottom: 0;
