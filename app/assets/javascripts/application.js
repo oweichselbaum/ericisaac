@@ -69,8 +69,8 @@ $(document).ready(function () {
                 type: 'outside'
             },
             thumbs: {
-                width: 50,
-                height: 50
+                width: 100,
+                height: 100
             },
             overlay: {
                 locked: false
@@ -82,7 +82,7 @@ $(document).ready(function () {
         // what is the y position of the scroll?
         var y = $(window).scrollTop();
         // whether that's below the start of article?
-        if (y >= 500) {
+        if (y >= 300) {
             // if so, add the fixed class
             $('.nav').addClass('stuck');
         }

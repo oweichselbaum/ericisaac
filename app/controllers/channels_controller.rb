@@ -10,6 +10,7 @@ class ChannelsController < ApplicationController
 
   def show
     @channel_photos = @channel.channel_photos.order("position DESC").all
+    @featured_photo = Photo.find(params[:featured_id]) if params[:featured_id]
   end
 
 end

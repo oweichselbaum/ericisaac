@@ -1,4 +1,5 @@
 .photo_wrapper{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?} #{photo_tags(cp.photo) unless photo_tags(cp.photo).nil?}", :'data-position' => cp.position}
+  %div{:class => "fb-like", :"data-href" => channel_url(cp.channel, featured_id: cp.photo.id), :"data-width" => "450", :"data-layout" => "button_count", :"data-show-faces" => "false", :"data-send" => "false"}
   = link_to "#{(image_tag "/assets/grey.gif", :'data-original' => cp.photo.main_image.url, :class => "lazy")}<div class='caption'><div class='black'></div><p>#{cp.photo.name.titleize}</p></div>".html_safe, cp.photo.main_image.url, :class => "fancybox-thumb", :rel => "fancybox-thumb", :title => cp.photo.name.titleize
   -#.caption
   -#  .black

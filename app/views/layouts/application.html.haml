@@ -8,6 +8,9 @@
     - if content_for?(:meta_description)
       = content_for(:meta_description)
 
+    - if content_for?(:facebook)
+      = content_for(:facebook)
+
     = stylesheet_link_tag "application", :media => 'all'
     = javascript_include_tag "jquery-182.min.js"
     = javascript_include_tag "jquery-ui-1811.min.js"
