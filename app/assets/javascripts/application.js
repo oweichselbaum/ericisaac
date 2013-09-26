@@ -16,7 +16,7 @@ $(document).ready(function () {
         }
     });
 
-    $("img.lazy").lazyload({
+    $imgs.lazyload({
         effect: "fadeIn",
         failure_limit: Math.max($imgs.length - 1, 0)
     });
@@ -91,4 +91,10 @@ $(document).ready(function () {
             $('.nav').removeClass('stuck');
         }
     });
+
+});
+
+$(window).load(function () {
+    var img_width = $('body.photos.show img').width();
+    $('body.photos.show .image_wrapper').css({'width': img_width});
 });

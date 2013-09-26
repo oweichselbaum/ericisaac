@@ -34,4 +34,5 @@ Ericisaac::Application.routes.draw do
   end
 
   match '/:id', :to => "channels#show", :as => :channel
+  match '/:channel_id/:id', :to => "channels/photos#show", :as => :channel_photo
 end

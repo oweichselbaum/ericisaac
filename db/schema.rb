@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130923164122) do
+ActiveRecord::Schema.define(:version => 20130926202525) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -87,8 +87,10 @@ ActiveRecord::Schema.define(:version => 20130923164122) do
     t.datetime "updated_at"
     t.string   "image_size"
     t.string   "image_type"
+    t.string   "cached_slug"
   end
 
+  add_index "photos", ["cached_slug"], :name => "index_photos_on_cached_slug", :unique => true
   add_index "photos", ["channel_id"], :name => "index_photos_on_channel_id"
 
   create_table "slugs", :force => true do |t|

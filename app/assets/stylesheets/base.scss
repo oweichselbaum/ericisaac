@@ -38,4 +38,57 @@ body {
   .footer, .push {
     height: 150px;
   }
+  &.photos.show {
+    .content {
+      padding-top: 165px;
+      h1 {
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 10px
+      }
+      a {
+        text-align: center;
+        display: block;
+        margin-bottom: 20px;
+      }
+      .image_wrapper {
+        position: relative;
+        margin: 0 auto;
+        .fb-like, .pinit {
+          position: absolute;
+          z-index: 1;
+          opacity: 0;
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+          top: 20px;
+          @include transition;
+        }
+        .fb-like {
+          left: 70px;
+        }
+        .pinit {
+          left: 20px;
+          a {
+            @include transition(0);
+          }
+        }
+        img {
+          display: block;
+          margin: 0 auto;
+          background: white;
+          padding: 10px;
+          margin-bottom: 40px;
+          box-shadow: 0 4px 2px -2px #bbbbbb;
+          -webkit-box-shadow: 0 4px 2px -2px #bbbbbb;
+          -moz-box-shadow: 0 4px 2px -2px #bbbbbb;
+          -ms-box-shadow: 0 4px 2px -2px #bbbbbb;
+        }
+        &:hover {
+          .fb-like, .pinit {
+            opacity: 1;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+          }
+        }
+      }
+    }
+  }
 }
