@@ -35,6 +35,8 @@ class Admin::PhotosController < AdminController
         end
 
       end
+    else
+      render :edit
     end
   end
 
