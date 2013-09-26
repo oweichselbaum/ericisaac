@@ -16,6 +16,10 @@
             font-size: 43px;
             padding: 0;
             color: white;
+            span.photo {
+              opacity: 0;
+              -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.9)";
+            }
           }
           &:hover {
             h1 {
@@ -55,7 +59,7 @@
     @include clearfix;
     @include transition;
     .nav_wrapper {
-      width: 90%;
+      width: 1280px;
       margin: 0 auto;
       position: relative;
       .logo {
@@ -76,6 +80,8 @@
             &.photo {
               font-weight: 300;
               font-size: 41px;
+              opacity: 1;
+              -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
             }
           }
         }
