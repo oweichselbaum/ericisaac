@@ -2,8 +2,8 @@
 .tag_names
   %ul#filters
     %li
-      = link_to "all", "#", :"data-filter" => "*", :class => "selected"
+      = link_to "all", "#", :"data-filter" => "*", :"data-rel" => "all", :class => "selected filter"
     - tag_name = tags.flatten.collect {|x| x.name}.uniq
     - tag_name.sort_by {|x| x}.each do |name|
       %li
-        = link_to name, "#", :"data-filter" => ".#{name.to_s.downcase.gsub(" ", "_")}"
+        = link_to name, "#", :"data-filter" => ".#{name.to_s.downcase.gsub(" ", "_")}", :"data-rel" => "#{name.to_s.downcase.gsub(" ", "_")}", :class => "filter"

@@ -54,8 +54,8 @@ $(document).ready(function () {
 
     $('#filters a').click(function () {
         var selector = $(this).attr('data-filter');
-        $("#filters a").removeClass("selected");
-        $(this).addClass("selected");
+//        $("#filters a").removeClass("selected");
+//        $(this).addClass("selected");
         $container.isotope({ filter: selector });
         setTimeout(onAnimationFinished, 600);
         return false;
@@ -77,6 +77,24 @@ $(document).ready(function () {
             }
         }
     });
+    $("ul#filters li a").each(function () {
+        $(this).click(function () {
+            var $this = $(this);
+            $(window).trigger("scroll");
+            // if we click the active tab, do nothing
+            if (!$this.hasClass("selected")) {
+                $(".filter").removeClass("selected");
+                $this.addClass("selected"); // set the active tab
+                // get the data-rel value from selected tab and set as filter
+                var $filter = $this.data("rel");
+                // if we select view all, return to initial settings and show all
+                $('.photo_wrapper:not(".isotope-hidden")').each(function() {
+                   $(this).find('.fancybox-thumb').attr('rel', $filter);
+                });
+            }
+        });
+    });
+
 
     $(window).scroll(function () {
         // what is the y position of the scroll?

@@ -2,7 +2,7 @@
   .pinit
     = link_to image_tag("http://assets.pinterest.com/images/pidgets/pin_it_button.png"), "//pinterest.com/pin/create/button/?url=#{channel_photo_url(cp.channel, cp.photo)}&media=#{cp.photo.main_image.url}&description=#{cp.photo.name.titleize}", :"data-pin-config" => "none", :"data-pin-do" => "buttonPin"
   %div{:class => "fb-like", :"data-href" => channel_photo_url(cp.channel, cp.photo, featured_id: cp.photo.name), :"data-width" => "450", :"data-layout" => "button_count", :"data-show-faces" => "false", :"data-send" => "false"}
-  = link_to "#{(image_tag "/assets/grey.gif", :'data-original' => cp.photo.main_image.url, :class => "lazy")}<div class='caption'><div class='black'></div><p>#{cp.photo.name.titleize}</p></div>".html_safe, cp.photo.main_image.url, :class => "fancybox-thumb", :rel => "fancybox-thumb", :title => cp.photo.name.titleize
+  = link_to "#{(image_tag "/assets/grey.gif", :'data-original' => cp.photo.main_image.url, :class => "lazy")}<div class='caption'><div class='black'></div><p>#{cp.photo.name.titleize}</p></div>".html_safe, cp.photo.main_image.url, :class => "fancybox-thumb", :"data-filter" => photo_tags(cp.photo), :rel => "fancybox-thumb", :title => cp.photo.name.titleize
 
 
 
