@@ -11,7 +11,26 @@
     -moz-box-shadow: 0 4px 2px -2px #bbbbbb;
     -ms-box-shadow: 0 4px 2px -2px #bbbbbb;
     position: relative;
-    overflow: hidden;
+    span {
+      display: block;
+      overflow: hidden;
+      &.small {
+        &.portrait {
+          height: 333px;
+        }
+        &.landscape {
+          height: 333px;
+        }
+      }
+      &.large {
+        &.portrait {
+          height: 696px;
+        }
+        &.landscape {
+          height: 450px;
+        }
+      }
+    }
     .frame {
       position: absolute;
       top: 0;
