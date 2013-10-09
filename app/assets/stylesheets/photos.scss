@@ -14,6 +14,7 @@
     span {
       display: block;
       overflow: hidden;
+      @include transition;
       &.small {
         &.portrait {
           height: 333px;
@@ -147,9 +148,6 @@
         }
       }
     }
-    img {
-      @include transition;
-    }
     a {
       position: relative;
       display: block;
@@ -161,21 +159,65 @@
         opacity: 1;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
       }
-      img {
+      span {
         opacity: .5;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.5)";
       }
-      a {
-        .caption {
-          bottom: 0;
-        }
+      .caption {
+        bottom: 0;
       }
+    }
+    .caption_wrap {
+      overflow: hidden;
+      display: block;
+      height: 45px;
+      bottom: 10px;
+      position: absolute;
+      width: 100%;
     }
     .caption {
       position: absolute;
       bottom: -65px;
-      padding: 10px;
+      padding-left: 10px;
+      height: 0px;
       @include transition;
+      z-index: 5;
+      &.small {
+        &.portrait {
+          .caption {
+            width: 84.5%;
+            .black {
+              width: 239px;
+            }
+          }
+        }
+        &.landscape {
+          .caption {
+            width: 92.5%;
+            .black {
+              width: 510px;
+            }
+          }
+        }
+      }
+      &.large {
+        &.portrait {
+          .caption {
+            width: 92.5%;
+            .black {
+              width: 510px;
+            }
+          }
+        }
+        &.landscape {
+          .caption {
+            width: 84.5%;
+            .black {
+              width: 780px;
+            }
+          }
+        }
+      }
       .black {
         background: black;
         opacity: .6;
@@ -191,7 +233,7 @@
         font-size: 17px;
         position: absolute;
         bottom: 10px;
-        padding-left: 10px;
+        padding: 10px 10px 10px;
       }
     }
   }
