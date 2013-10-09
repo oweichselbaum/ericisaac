@@ -9,8 +9,9 @@
     @include clearfix;
     height: 150px;
     .footer_wrapper {
-      width: 1280px;
-      margin: 0 auto;
+      width: 94%;
+      padding: 0 40px;
+      overflow: hidden;
       .copyright {
         float: left;
       }

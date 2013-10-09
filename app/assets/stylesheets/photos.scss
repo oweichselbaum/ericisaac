@@ -11,9 +11,37 @@
     -moz-box-shadow: 0 4px 2px -2px #bbbbbb;
     -ms-box-shadow: 0 4px 2px -2px #bbbbbb;
     position: relative;
+    overflow: hidden;
+    .frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 10px solid white;
+      z-index: 1;
+      &.small {
+        &.portrait {
+          width: 239px;
+          height: 333px;
+        }
+        &.landscape {
+          width: 510px;
+          height: 333px;
+        }
+      }
+      &.large {
+        &.portrait {
+          width: 510px;
+          height: 696px;
+        }
+        &.landscape {
+          width: 780px;
+          height: 450px;
+        }
+      }
+    }
     .fb-like, .pinit {
       position: absolute;
-      z-index: 1;
+      z-index: 2;
       opacity: 0;
       -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
       top: 20px;
@@ -28,15 +56,17 @@
         @include transition(0);
       }
     }
+    img {
+      width: 150%;
+      margin-left: -24%;
+      margin-top: -18%;
+      -ms-interpolation-mode: bicubic;
+    }
     &.small {
       z-index: 0;
       &.portrait {
         width: 239px;
         height: 333px;
-        img {
-          width: 239px;
-          -ms-interpolation-mode: bicubic;
-        }
         .caption {
           width: 84.5%;
           .black {
@@ -52,10 +82,6 @@
       &.landscape {
         width: 510px;
         height: 333px;
-        img {
-          width: 510px;
-          -ms-interpolation-mode: bicubic;
-        }
         .caption {
           width: 92.5%;
           .black {
@@ -74,10 +100,6 @@
       &.portrait {
         width: 510px;
         height: 696px;
-        img {
-          width: 510px;
-          -ms-interpolation-mode: bicubic;
-        }
         .caption {
           width: 92.5%;
           .black {
@@ -93,10 +115,6 @@
       &.landscape {
         width: 780px;
         height: 450px;
-        img {
-          width: 780px;
-          -ms-interpolation-mode: bicubic;
-        }
         .caption {
           width: 84.5%;
           .black {
@@ -117,28 +135,6 @@
       position: relative;
       display: block;
       overflow: hidden;
-      .caption {
-        position: absolute;
-        bottom: -65px;
-        padding: 10px;
-        @include transition;
-        .black {
-          background: black;
-          opacity: .6;
-          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.6)";
-          display: block;
-          height: 65px;
-          margin-left: -10px;
-          bottom: 0;
-          position: absolute;
-        }
-        p {
-          color: white;
-          font-size: 17px;
-          position: absolute;
-          bottom: 10px;
-        }
-      }
     }
     &:hover {
       z-index: 1;
@@ -154,6 +150,29 @@
         .caption {
           bottom: 0;
         }
+      }
+    }
+    .caption {
+      position: absolute;
+      bottom: -65px;
+      padding: 10px;
+      @include transition;
+      .black {
+        background: black;
+        opacity: .6;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.6)";
+        display: block;
+        height: 65px;
+        margin-left: -10px;
+        bottom: 0;
+        position: absolute;
+      }
+      p {
+        color: white;
+        font-size: 17px;
+        position: absolute;
+        bottom: 10px;
+        padding-left: 10px;
       }
     }
   }

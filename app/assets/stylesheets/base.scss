@@ -30,8 +30,8 @@ body {
     height: 100%;
     margin: 0 auto -150px;
     .content {
-      padding: 185px 0 0 40px;
-      min-width: 97%;
+      padding: 185px 0 0 20px;
+      width: 97%;
       margin: 0 auto;
     }
   }
@@ -40,7 +40,9 @@ body {
   }
   &.photos.show {
     .content {
-      padding-top: 165px;
+      padding: 165px 0 0;
+      width: 57%;
+      min-width: 57%;
       h1 {
         text-align: center;
         margin-top: 0;
@@ -54,6 +56,7 @@ body {
       .image_wrapper {
         position: relative;
         margin: 0 auto;
+        width: 40% !important;
         .fb-like, .pinit {
           position: absolute;
           z-index: 1;
@@ -81,6 +84,8 @@ body {
           -webkit-box-shadow: 0 4px 2px -2px #bbbbbb;
           -moz-box-shadow: 0 4px 2px -2px #bbbbbb;
           -ms-box-shadow: 0 4px 2px -2px #bbbbbb;
+          max-width: 100%;
+          height: auto;
         }
         &:hover {
           .fb-like, .pinit {
