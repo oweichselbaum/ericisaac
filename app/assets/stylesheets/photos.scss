@@ -11,7 +11,7 @@
     -moz-box-shadow: 0 4px 2px -2px #bbbbbb;
     -ms-box-shadow: 0 4px 2px -2px #bbbbbb;
     position: relative;
-    span {
+    span.wrapper {
       display: block;
       overflow: hidden;
       @include transition;
@@ -159,7 +159,7 @@
         opacity: 1;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
       }
-      span {
+      span.wrapper {
         opacity: .5;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.5)";
       }
