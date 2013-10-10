@@ -21,6 +21,10 @@ function moveDown(item) {
     });
 }
 
+function moveTop(item) {
+    item.prependTo(item.parent());
+}
+
 jQuery(function () {
     $('#sortable').sortable({
         axis: 'y',
@@ -34,6 +38,8 @@ jQuery(function () {
         var val = btn.val();
         if (val == 'up')
             moveUp(btn.parents('.channel_photo'));
+        else if (val == 'top')
+            moveTop(btn.parents('.channel_photo'));
         else
             moveDown(btn.parents('.channel_photo'));
     });

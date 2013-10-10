@@ -14,7 +14,8 @@
           = link_to email, "mailto:#{email}"
   .navigation
     %ul
-      - Channel.find_each do |channel|
+      - visible_channels = Channel.all.select {|x| !x.hidden?}.sort_by {|x| x.created_at}
+      -  visible_channels.each do |channel|
         %li
           = link_to channel.name, channel_path(channel), :class => channel.name.gsub(" ", "-")
       %li

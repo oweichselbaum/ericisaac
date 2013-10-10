@@ -1,7 +1,7 @@
 class Channel < ActiveRecord::Base
   extend FriendlyId
   has_friendly_id :name, :use_slug => true, :strip_non_ascii => true
-  attr_accessible :name, :title, :description, :keywords, :photo_ids
+  attr_accessible :name, :title, :description, :keywords, :photo_ids, :hidden
 
   has_many :channel_photos
   has_many :photos, :through => :channel_photos

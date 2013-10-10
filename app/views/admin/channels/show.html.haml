@@ -11,6 +11,11 @@
       %dt Metadata keywords
       %dd= @channel.keywords
 
+    %p
+      %b
+        Hidden:
+      = @channel.hidden?
+
     - if @channel.channel_photos.present?
       %hr
       %p
@@ -18,6 +23,7 @@
         %b
           = @channel.photos.count
       %p Drag and drop to reorder.
+      = link_to "Edit Channel", edit_admin_channel_path(@channel), :class => "small-button", :style => "float: right;"
       = button_tag "Submit Order", :class => "sort_submit small-button", :style => "float: right;"
       %ul.title
         %li
@@ -38,8 +44,9 @@
                 = cp.photo.image_size
               %li
                 .rightfloat.commands
-                  = button_tag 'up', :value => 'up'
-                  = button_tag 'down', :value => 'down'
+                  = button_tag 'Top', :value => 'top'
+                  = button_tag 'Up', :value => 'up'
+                  = button_tag 'Down', :value => 'down'
 
     = button_tag "Submit Order", :class => "sort_submit small-button"
     = link_to "Edit Channel", edit_admin_channel_path(@channel), :class => "small-button"

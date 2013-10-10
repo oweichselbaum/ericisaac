@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130926202525) do
+ActiveRecord::Schema.define(:version => 20131010144134) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -58,9 +58,10 @@ ActiveRecord::Schema.define(:version => 20130926202525) do
     t.string   "title"
     t.string   "description"
     t.string   "keywords"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "cached_slug"
+    t.boolean  "hidden",      :default => false
   end
 
   add_index "channels", ["cached_slug"], :name => "index_channels_on_cached_slug", :unique => true
