@@ -1,0 +1,95 @@
+@import 'bourbon';
+
+body.bio.index {
+  @import 'bourbon';
+  #photos_container {
+    .photo_wrapper {
+      .fb-like, .pinit {
+      }
+      &.small {
+        &.portrait {
+        }
+        &.landscape {
+        }
+      }
+      &.large {
+        &.portrait {
+        }
+        &.landscape {
+        }
+      }
+      &:hover {
+        .caption_wrap {
+          opacity: 1;
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+        }
+      }
+      .caption_wrap {
+        overflow: hidden;
+        display: block;
+        top: 10px;
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        @include transition;
+        &.small {
+          &.portrait {
+            height: 333px;
+          }
+          &.landscape {
+            height: 333px;
+          }
+        }
+        &.large {
+          &.portrait {
+            height: 696px;
+          }
+          &.landscape {
+            height: 450px;
+          }
+        }
+      }
+      .caption {
+        position: absolute;
+        bottom: 0;
+        padding-left: 10px;
+        height: 100%;
+        @include transition;
+        z-index: 4;
+        &.small {
+          &.portrait {
+          }
+          &.landscape {
+          }
+        }
+        &.large {
+          &.portrait {
+          }
+          &.landscape {
+          }
+        }
+        .black {
+          background: black;
+          opacity: .6;
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.6)";
+          display: block;
+          height: 100%;
+          margin-left: -10px;
+          bottom: 0;
+          position: absolute;
+          .desc_wrap {
+            padding-top: 40px;
+          }
+        }
+        p {
+          color: white;
+          position: relative;
+          font-size: 17px;
+          bottom: 5px;
+          padding: 10px 10px 0px;
+        }
+      }
+    }
+  }
+}
