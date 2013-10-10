@@ -21,6 +21,26 @@ $(document).ready(function () {
         failure_limit: Math.max($imgs.length - 1, 0)
     });
 
+    $('span.portrait.small img').resizecrop({
+        width: 239,
+        height: 333
+    });
+
+    $('span.portrait.large img').resizecrop({
+        width: 510,
+        height: 696
+    });
+
+    $('span.landscape.small img').resizecrop({
+        width: 510,
+        height: 333
+    });
+
+    $('span.landscape.large img').resizecrop({
+        width: 780,
+        height: 450
+    });
+
     var title = window.location.pathname.replace("/", "");
     if (title == "") {
         $('.new-work').addClass('selected');
@@ -63,8 +83,8 @@ $(document).ready(function () {
                 // get the data-rel value from selected tab and set as filter
                 var $filter = $this.data("rel");
                 // if we select view all, return to initial settings and show all
-                $('.photo_wrapper:not(".isotope-hidden")').each(function() {
-                   $(this).find('.fancybox-thumb').attr('rel', $filter);
+                $('.photo_wrapper:not(".isotope-hidden")').each(function () {
+                    $(this).find('.fancybox-thumb').attr('rel', $filter);
                 });
             }
         });

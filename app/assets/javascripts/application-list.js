@@ -15,7 +15,7 @@
 //= require waypoints-sticky.min
 //= require jquery.infinitescroll.min
 //= require jquery.lazyload.min
-//= require jquery.resizecrop-1.0.3.min
+//= require jquery.resizecrop-1.0.3
 //= require jquery.fancybox
 //= require jquery.fancybox-thumbs
 //= require application

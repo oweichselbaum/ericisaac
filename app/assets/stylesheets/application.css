@@ -12,6 +12,7 @@
  *= require_tree .
  *= require formtastic
  *= require isotope
+ *= require jquery.resizeandcrop
  *= require jquery.fancybox
  *= require jquery.fancybox-thumbs
  */

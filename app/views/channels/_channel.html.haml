@@ -9,7 +9,7 @@
   %div{:class => "fb-like", :"data-href" => channel_photo_url(cp.channel, cp.photo, featured_id: cp.photo.name), :"data-width" => "450", :"data-layout" => "button_count", :"data-show-faces" => "false", :"data-send" => "false"}
   %span.wrapper{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}"}
     = link_to "", cp.photo.main_image.url, :class => "frame fancybox-thumb #{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}", :"data-filter" => photo_tags(cp.photo), :rel => "fancybox-thumb", :title => cp.photo.name.titleize
-    = image_tag "/assets/white.png", :'data-original' => cp.photo.main_image.url, :class => "lazy"
+    = image_tag "/assets/white.png", :'realsrc' => cp.photo.main_image.url, :'data-original' => cp.photo.main_image.url, :class => "lazy"
 
 
 

@@ -77,9 +77,6 @@
       }
     }
     img {
-      width: 150%;
-      margin-left: -24%;
-      margin-top: -18%;
       -ms-interpolation-mode: bicubic;
     }
     &.small {
@@ -87,6 +84,9 @@
       &.portrait {
         width: 239px;
         height: 333px;
+        img {
+          height: 333px;
+        }
         .caption {
           width: 84.5%;
           .black {
@@ -102,6 +102,9 @@
       &.landscape {
         width: 510px;
         height: 333px;
+        img {
+          height: 333px;
+        }
         .caption {
           width: 92.5%;
           .black {
@@ -120,6 +123,9 @@
       &.portrait {
         width: 510px;
         height: 696px;
+        img {
+          height: 696px;
+        }
         .caption {
           width: 92.5%;
           .black {
@@ -135,6 +141,9 @@
       &.landscape {
         width: 780px;
         height: 450px;
+        img {
+          height: 450px;
+        }
         .caption {
           width: 84.5%;
           .black {
