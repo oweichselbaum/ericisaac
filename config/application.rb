@@ -68,6 +68,7 @@ module Ericisaac
       admin.js
       application-list.js
       mobile-application-list.js
+      mobile.css
     ).compact.map(&:strip).uniq
 
   end
