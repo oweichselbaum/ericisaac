@@ -6,6 +6,10 @@
     - else
       %title Eric Isaac Photography
 
+    %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}
+    %meta{:name => "apple-mobile-web-app-status-bar-style", :content => "black"}
+    %meta{:name => "viewport", :content => "width = device-width", :"initial-scale" => 0}
+
     - if content_for?(:meta_keywords)
       = content_for(:meta_keywords)
 
@@ -14,10 +18,11 @@
 
     - if content_for?(:facebook)
       = content_for(:facebook)
-    = stylesheet_link_tag "application", :media => 'all'
+
+    = stylesheet_link_tag "mobile", :media => 'all'
     = javascript_include_tag "jquery-182.min.js"
     = javascript_include_tag "jquery-ui-1811.min.js"
-    = javascript_include_tag "application-list"
+    = javascript_include_tag "mobile-application-list"
     = csrf_meta_tags
   %body{:class => body_classes}
     #fb-root
@@ -31,14 +36,19 @@
       }(document, 'script', 'facebook-jssdk'));
 
     = render 'layouts/global_nav'
-    .body
-      .content
+
+    #wrapper
+      %p#button
+        -#%label{:for => "handler-right", :id => "right", :href => "#"}
+        -#  Open right
+        %label{:for => "handler-left", :id => "left", :href => "#"}
+          Menu
+      #content
         #flash
           %p.notice= notice
           %p.alert= alert
 
         = yield
-      .push
 
     = render 'layouts/footer'
     %script{:type => "text/javascript", :src => "//assets.pinterest.com/js/pinit.js"}

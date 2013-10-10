@@ -67,6 +67,7 @@ module Ericisaac
       jquery-ui-1811.min.js
       admin.js
       application-list.js
+      mobile-application-list.js
     ).compact.map(&:strip).uniq
 
   end

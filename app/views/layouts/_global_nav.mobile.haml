@@ -1,0 +1,9 @@
+%input{:type => "checkbox", :name => "handler-right", :class => "handler", :id => "handler-right", :onclick => "null"}
+%input{:type => "checkbox", :name => "handler-left", :class => "handler", :id => "handler-left", :onclick => "null"}
+
+#menu
+  %ul
+    - visible_channels = Channel.all.select {|x| !x.hidden?}.sort_by {|x| x.created_at}
+    -  visible_channels.each do |channel|
+      %li
+        = link_to channel.name, channel_path(channel), :class => channel.name.gsub(" ", "-")
