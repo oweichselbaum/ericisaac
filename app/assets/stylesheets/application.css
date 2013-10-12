@@ -9,10 +9,14 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  *= require formtastic
  *= require isotope
  *= require jquery.resizeandcrop
  *= require jquery.fancybox
  *= require jquery.fancybox-thumbs
+ *= require base
+ *= require bios
+ *= require footer
+ *= require head
+ *= require photos
  */
