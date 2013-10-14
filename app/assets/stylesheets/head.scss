@@ -60,7 +60,7 @@
     @include transition;
     .nav_wrapper {
       padding: 0 40px;
-      min-width: 94%;
+      width: 97%;
       margin: 0 auto;
       position: relative;
       .logo {
@@ -107,7 +107,8 @@
     min-width: 90%;
     border-bottom: 1px solid black;
     background: #dddddd;
-    z-index: 1;
+    z-index: 2;
+    position: relative;
     opacity: .9;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.9)";
     @include clearfix;
