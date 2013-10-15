@@ -11,6 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery.lazyload.min
+//= require jquery.isotope.min
+//= require jquery.swipebox
 //= require mobile
 
 

@@ -7,3 +7,22 @@
     -  visible_channels.each do |channel|
       %li
         = link_to channel.name, channel_path(channel), :class => channel.name.gsub(" ", "-")
+    %li
+      = link_to "bio", bio_index_path
+    %li
+      = link_to "blog", "#"
+    %li
+      = link_to Contact.first.phone, "tel:+1#{Contact.first.phone.gsub(".", "")}"
+    %li
+      - email = Contact.first.email
+      = link_to email, "mailto:#{email}"
+
+#filters
+  - tags = @channel.photos.collect {|x| x.tags}
+  %ul
+    %li
+      = link_to "all", "#", :"data-filter" => "*", :"data-rel" => "all", :class => "selected filter"
+    - tag_name = tags.flatten.collect {|x| x.name}.uniq
+    - tag_name.sort_by {|x| x}.each do |name|
+      %li
+        = link_to name, "#", :"data-filter" => ".#{name.to_s.downcase.gsub(" ", "_")}", :"data-rel" => "#{name.to_s.downcase.gsub(" ", "_")}", :class => "filter"

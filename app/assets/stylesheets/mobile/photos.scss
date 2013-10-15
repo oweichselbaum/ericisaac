@@ -1,0 +1,26 @@
+@import 'bourbon';
+
+#photos_container {
+  .photo_wrapper {
+    width: 43%;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    background: white;
+    padding: 5px;
+    @include clearfix;
+    display: table-cell;
+    &.portrait {
+      height: 153px;
+    }
+    &.landscape {
+      height: 88px;
+    }
+    //&.even {
+    //  margin-right: 0;
+    //}
+    img {
+      width: 100%;
+    }
+  }
+}
