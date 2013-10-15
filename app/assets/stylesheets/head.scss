@@ -59,7 +59,7 @@
     @include clearfix;
     @include transition;
     .nav_wrapper {
-      padding: 0 40px;
+      padding: 0 0 0 40px;
       width: 97%;
       margin: 0 auto;
       position: relative;
@@ -93,7 +93,7 @@
       .info {
         position: absolute;
         bottom: 10px;
-        right: 4.5%;
+        right: 3%;
         @include transition;
       }
       .social {
