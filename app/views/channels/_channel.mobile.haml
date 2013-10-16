@@ -1,5 +1,7 @@
 .photo_wrapper{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?} #{photo_tags(cp.photo) unless photo_tags(cp.photo).nil?} #{cycle("", "even")}", :'data-position' => cp.position}
-  = link_to (image_tag '/assets/white.png', :'data-original' => cp.photo.main_image.url, :class => "lazy"), cp.photo.main_image.url, :class => "swipebox-isotope", :"data-filter" => photo_tags(cp.photo), :title => cp.photo.name.titleize
+  = link_to "", cp.photo.main_image.url, :class => "swipebox-isotope", :"data-filter" => photo_tags(cp.photo), :title => cp.photo.name.titleize
+  %span.wrapper{:class => "#{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}"}
+  = image_tag '/assets/white.png', :'data-original' => cp.photo.main_image.url, :class => "lazy"
 
   -#.caption_wrap{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}"}
   -#  .caption{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}"}

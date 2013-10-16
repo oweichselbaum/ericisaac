@@ -24,20 +24,6 @@
     = javascript_include_tag "jquery-ui-1811.min.js"
     = javascript_include_tag "mobile-application-list"
 
-    :javascript
-      (function(window, $, PhotoSwipe){
-
-          $(document).ready(function(){
-
-              var options = {};
-              $(".photo_wrapper a").photoSwipe(options);
-
-          });
-
-
-      }(window, window.jQuery, window.Code.PhotoSwipe));
-
-
     = csrf_meta_tags
   %body{:class => body_classes}
     #fb-root
@@ -55,7 +41,7 @@
     #wrapper
       #button
         %label{:for => "handler-right", :id => "right", :href => "#"}
-          Filters
+          Filter
         %label{:for => "handler-left", :id => "left", :href => "#"}
           Menu
         #main_header
