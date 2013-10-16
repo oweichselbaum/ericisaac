@@ -40,8 +40,9 @@
 
     #wrapper
       #button
-        %label{:for => "handler-right", :id => "right", :href => "#"}
-          Filter
+        - unless controller.controller_name == "bio"
+          %label{:for => "handler-right", :id => "right", :href => "#"}
+            Filter
         %label{:for => "handler-left", :id => "left", :href => "#"}
           Menu
         #main_header
