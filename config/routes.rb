@@ -32,8 +32,7 @@ Ericisaac::Application.routes.draw do
     resources :contacts
     resources :tags
   end
-
+  match '/site/bio', :to =>"bio#index"
   match '/site/:id', :to => "channels#show", :as => :channel
   match '/site/:channel_id/:id', :to => "channels/photos#show", :as => :channel_photo
-  match '/site/bio', :to =>"bio#index"
 end
