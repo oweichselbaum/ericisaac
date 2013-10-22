@@ -127,6 +127,11 @@
         font-size: 17px;
         margin-right: 50px;
         text-transform: lowercase;
+        &.selected {
+          a {
+            color: #8B8B8B;
+          }
+        }
         a {
           @include transition(0);
           &.selected {

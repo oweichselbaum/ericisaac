@@ -16,12 +16,12 @@
     %ul
       - visible_channels = Channel.all.select {|x| !x.hidden?}.sort_by {|x| x.created_at}
       -  visible_channels.each do |channel|
-        %li
+        %li{:class => @channel.name == channel.name ? "selected":"" }
           = link_to channel.name, channel_path(channel), :class => channel.name.gsub(" ", "-")
+      %li{:class => @channel.name == "bio" ? "selected":"" }
+        = link_to "bio", site_bio_path
       %li
-        = link_to "bio", bio_index_path
-      %li
-        = link_to "blog", "#"
+        = link_to "blog", "http://food.ericisaac.com/", :target => "_blank"
   - if content_for?(:tags_nav)
     = content_for(:tags_nav)
 

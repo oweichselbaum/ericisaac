@@ -20,6 +20,7 @@ $(document).ready(function () {
         effect: "fadeIn",
         failure_limit: Math.max($imgs.length - 1, 0)
     });
+    onAnimationFinished();
 
     $('span.portrait.small img').resizecrop({
         width: 239,
@@ -41,12 +42,12 @@ $(document).ready(function () {
         height: 450
     });
 
-    var title = window.location.pathname.replace("/", "");
-    if (title == "") {
-        $('.new-work').addClass('selected');
-    } else {
-        $('div').find('.' + title).addClass('selected');
-    }
+//    var title = window.location.pathname.replace("/site/", "");
+//    if (title == "/") {
+//        $('.navigation .new-work').addClass('selected');
+//    } else {
+//        $('div.navigation').find('.' + title).addClass('selected');
+//    }
 
     $('#filters a').click(function () {
         $("html, body").animate({ scrollTop: 0 }, "slow");

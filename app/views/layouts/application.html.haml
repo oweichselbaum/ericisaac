@@ -15,8 +15,9 @@
     - if content_for?(:facebook)
       = content_for(:facebook)
     = stylesheet_link_tag "application", :media => 'all'
-    = javascript_include_tag "jquery-182.min.js"
-    = javascript_include_tag "jquery-ui-1811.min.js"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+    = javascript_include_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/jquery-ui.min.js"
+    = javascript_include_tag "//www.google.com/jsapi"
     = javascript_include_tag "application-list"
     = csrf_meta_tags
   %body{:class => body_classes}
