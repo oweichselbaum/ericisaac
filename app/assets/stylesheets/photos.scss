@@ -24,23 +24,27 @@
       }
     }
     span.wrapper {
-      display: block;
+      display: table-cell;
+      vertical-align: middle;
       overflow: hidden;
       @include transition;
+      .lazy {
+        display: table-cell !important;
+      }
       &.small {
         &.portrait {
-          height: 333px;
+          height: 280px;
         }
         &.landscape {
-          height: 333px;
+          height: 341px;
         }
       }
       &.large {
         &.portrait {
-          height: 696px;
+          height: 591px;
         }
         &.landscape {
-          height: 450px;
+          height: 520px;
         }
       }
     }
@@ -53,21 +57,21 @@
       &.small {
         &.portrait {
           width: 239px;
-          height: 333px;
+          height: 280px;
         }
         &.landscape {
           width: 510px;
-          height: 333px;
+          height: 341px;
         }
       }
       &.large {
         &.portrait {
           width: 510px;
-          height: 696px;
+          height: 592px;
         }
         &.landscape {
           width: 780px;
-          height: 450px;
+          height: 520px;
         }
       }
     }
@@ -95,10 +99,10 @@
       z-index: 0;
       &.portrait {
         width: 239px;
-        height: 333px;
+        height: 280px;
         img {
           width: 239px;
-          height: 333px;
+          height: auto !important;
         }
         .caption {
           width: 84.5%;
@@ -114,10 +118,10 @@
       }
       &.landscape {
         width: 510px;
-        height: 333px;
+        height: 341px;
         img {
           width: 510px;
-          height: 333px;
+          height: auto !important;
         }
         .caption {
           width: 92.5%;
@@ -136,10 +140,10 @@
       z-index: 0;
       &.portrait {
         width: 510px;
-        height: 696px;
+        height: 591px;
         img {
           width: 510px;
-          height: 696px;
+          height: auto !important;
         }
         .caption {
           width: 92.5%;
@@ -155,10 +159,10 @@
       }
       &.landscape {
         width: 780px;
-        height: 450px;
+        height: 520px;
         img {
           width: 780px;
-          height: 450px;
+          height: auto !important;
         }
         .caption {
           width: 84.5%;

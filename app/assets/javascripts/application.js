@@ -22,25 +22,25 @@ $(document).ready(function () {
     });
     onAnimationFinished();
 
-    $('span.portrait.small img').resizecrop({
-        width: 239,
-        height: 333
-    });
-
-    $('span.portrait.large img').resizecrop({
-        width: 510,
-        height: 696
-    });
-
-    $('span.landscape.small img').resizecrop({
-        width: 510,
-        height: 333
-    });
-
-    $('span.landscape.large img').resizecrop({
-        width: 780,
-        height: 450
-    });
+//    $('span.portrait.small img').resizecrop({
+//        width: 239,
+//        height: 333
+//    });
+//
+//    $('span.portrait.large img').resizecrop({
+//        width: 510,
+//        height: 696
+//    });
+//
+//    $('span.landscape.small img').resizecrop({
+//        width: 510,
+//        height: 333
+//    });
+//
+//    $('span.landscape.large img').resizecrop({
+//        width: 780,
+//        height: 450
+//    });
 
 //    var title = window.location.pathname.replace("/site/", "");
 //    if (title == "/") {
