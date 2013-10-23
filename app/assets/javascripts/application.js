@@ -2,7 +2,7 @@ onAnimationFinished = function () {
     $(window).trigger("scroll")
 };
 
-$(document).ready(function () {
+$(window).load(function () {
     var $container = $('#photos_container');
     var $win = $(window);
     $imgs = $("img.lazy");
@@ -16,11 +16,11 @@ $(document).ready(function () {
         }
     });
 
-    $imgs.lazyload({
-        effect: "fadeIn",
-        failure_limit: Math.max($imgs.length - 1, 0)
-    });
-    onAnimationFinished();
+//    $imgs.lazyload({
+//        effect: "fadeIn",
+//        failure_limit: Math.max($imgs.length - 1, 0)
+//    });
+//    onAnimationFinished();
 
 //    $('span.portrait.small img').resizecrop({
 //        width: 239,

@@ -4,7 +4,7 @@
   margin-right: -10px;
   width: 100%;
   .photo_wrapper {
-    margin: 0 10px 10px 0;
+    margin: 0px 10px 10px 0;
     padding: 10px;
     background: white;
     box-shadow: 0 4px 2px -2px #bbbbbb;
@@ -12,7 +12,7 @@
     -moz-box-shadow: 0 4px 2px -2px #bbbbbb;
     -ms-box-shadow: 0 4px 2px -2px #bbbbbb;
     position: relative;
-    overflow: hidden;
+    //overflow: hidden;
     a {
       &.fancybox-thumb {
         position: absolute;
@@ -25,27 +25,27 @@
       }
     }
     span.wrapper {
-      display: table-cell;
-      vertical-align: middle;
+      //display: table-cell;
+      //vertical-align: middle;
       overflow: hidden;
       @include transition;
-      .lazy {
-        display: table-cell !important;
-      }
+      //.lazy {
+      //  display: table-cell !important;
+      //}
       &.small {
         &.portrait {
-          height: 280px;
+          //height: 280px;
         }
         &.landscape {
-          height: 341px;
+          //height: 341px;
         }
       }
       &.large {
         &.portrait {
-          height: 591px;
+          //height: 591px;
         }
         &.landscape {
-          height: 520px;
+          //height: 520px;
         }
       }
     }
@@ -58,21 +58,21 @@
       &.small {
         &.portrait {
           width: 239px;
-          height: 280px;
+          //height: 280px;
         }
         &.landscape {
           width: 510px;
-          height: 341px;
+          //height: 341px;
         }
       }
       &.large {
         &.portrait {
           width: 510px;
-          height: 592px;
+          //height: 592px;
         }
         &.landscape {
           width: 780px;
-          height: 520px;
+          //height: 520px;
         }
       }
     }
@@ -103,10 +103,9 @@
       z-index: 0;
       &.portrait {
         width: 239px;
-        height: 280px;
+        //height: 280px;
         img {
           width: 239px;
-          height: auto !important;
         }
         .caption {
           width: 84.5%;
@@ -122,10 +121,9 @@
       }
       &.landscape {
         width: 510px;
-        height: 341px;
+        //height: 341px;
         img {
           width: 510px;
-          height: auto !important;
         }
         .caption {
           width: 92.5%;
@@ -144,10 +142,9 @@
       z-index: 0;
       &.portrait {
         width: 510px;
-        height: 591px;
+        //height: 591px;
         img {
           width: 510px;
-          height: auto !important;
         }
         .caption {
           width: 92.5%;
@@ -163,10 +160,9 @@
       }
       &.landscape {
         width: 780px;
-        height: 520px;
+        ////height: 520px;
         img {
           width: 780px;
-          height: auto !important;
         }
         .caption {
           width: 84.5%;
