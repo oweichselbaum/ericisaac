@@ -2,18 +2,20 @@ onAnimationFinished = function () {
     $(window).trigger("scroll")
 };
 
-$(window).load(function () {
+$(document).ready(function () {
     var $container = $('#photos_container');
     var $win = $(window);
     $imgs = $("img.lazy");
-    $container.isotope({
-        itemSelector: '.photo_wrapper',
-        masonry: {
-            columnWidth: 5
-        },
-        masonryHorizontal: {
-            rowHeight: 5
-        }
+    $container.imagesLoaded(function () {
+        $container.isotope({
+            itemSelector: '.photo_wrapper',
+            masonry: {
+                columnWidth: 5
+            },
+            masonryHorizontal: {
+                rowHeight: 5
+            }
+        });
     });
 
 //    $imgs.lazyload({
