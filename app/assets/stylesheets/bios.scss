@@ -35,18 +35,18 @@ body.bio.index {
         @include transition;
         &.small {
           &.portrait {
-            height: 280px;
+            height: 93%;
           }
           &.landscape {
-            height: 341px;
+            height: 93%px;
           }
         }
         &.large {
           &.portrait {
-            height: 592px;
+            height: 95.4%;
           }
           &.landscape {
-            height: 520px;
+            height: 95.4%;
           }
         }
       }
