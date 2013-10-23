@@ -76,9 +76,6 @@
         }
       }
     }
-    .fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {
-        display: none !important;
-    }
     .fb-like, .pinit {
       position: absolute;
       z-index: 6;
@@ -89,6 +86,9 @@
     }
     .fb-like {
       left: 70px;
+      width: 73px;
+      height: 20px;
+      overflow: hidden;
     }
     .pinit {
       left: 20px;
