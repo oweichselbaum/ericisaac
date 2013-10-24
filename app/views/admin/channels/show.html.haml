@@ -47,6 +47,8 @@
                   = button_tag 'Top', :value => 'top'
                   = button_tag 'Up', :value => 'up'
                   = button_tag 'Down', :value => 'down'
+                  = button_tag 'Bottom', :value => 'bottom'
+                  = link_to "Remove", remove_content_admin_channel_photo_path(@channel, cp), :method => :put, :class => "small-button", :confirm => "Are you sure you want to delete this photo from this channel?"
 
     = button_tag "Submit Order", :class => "sort_submit small-button"
     = link_to "Edit Channel", edit_admin_channel_path(@channel), :class => "small-button"

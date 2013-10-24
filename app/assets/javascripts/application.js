@@ -113,5 +113,6 @@ $(document).ready(function () {
 $(window).load(function () {
     var img_width = $('body.photos.show img').width();
     $('body.photos.show .image_wrapper').css({'width': img_width});
+    $('.pace').delay(750).fadeOut();
     $('.loader').delay(750).fadeOut();
 });

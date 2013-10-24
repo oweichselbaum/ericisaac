@@ -25,6 +25,10 @@ function moveTop(item) {
     item.prependTo(item.parent());
 }
 
+function moveBottom(item) {
+    item.appendTo(item.parent());
+}
+
 jQuery(function () {
     $('#sortable').sortable({
         axis: 'y',
@@ -40,6 +44,8 @@ jQuery(function () {
             moveUp(btn.parents('.channel_photo'));
         else if (val == 'top')
             moveTop(btn.parents('.channel_photo'));
+        else if (val == 'bottom')
+            moveBottom(btn.parents('.channel_photo'));
         else
             moveDown(btn.parents('.channel_photo'));
     });

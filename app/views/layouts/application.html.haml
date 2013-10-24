@@ -42,7 +42,8 @@
 
     = render 'layouts/global_nav'
     .body
-      .loader
+      - unless controller.controller_name == "sessions"
+        .loader
       .content
         #flash
           %p.notice= notice

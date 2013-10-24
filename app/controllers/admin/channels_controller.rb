@@ -41,4 +41,5 @@ class Admin::ChannelsController < AdminController
     flash[:notice] = "Channel deleted." if @channel.destroy
     redirect_to admin_channels_path
   end
+
 end

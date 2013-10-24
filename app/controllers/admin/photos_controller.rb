@@ -1,5 +1,5 @@
 class Admin::PhotosController < AdminController
-  before_filter :load_photo, :except => [:index, :new, :create, :sort]
+  before_filter :load_photo, :except => [:index, :new, :create, :sort, :remove_content]
 
   def load_photo
     @photo = Photo.find(params[:id])
@@ -56,6 +56,13 @@ class Admin::PhotosController < AdminController
     render nothing: true
 
     #render :json => {}
+  end
+
+  def remove_content
+    @channel_photo = ChannelPhoto.find(params[:id])
+    @channel_photo.destroy
+    flash[:notice] = "Photo removed from channel."
+    redirect_to admin_channel_path(@channel_photo.channel)
   end
 
 end
