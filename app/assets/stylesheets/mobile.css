@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require pace
  *= require isotope
  *= require swipebox
  *= require_directory ./mobile

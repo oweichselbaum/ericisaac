@@ -10,6 +10,8 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+//= require pace.js
+//= require imagesloaded.js
 //= require jquery.lazyload.min
 //= require jquery.isotope.min
 //= require jquery.swipebox

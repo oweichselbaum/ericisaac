@@ -5,9 +5,9 @@
   %ul
     - visible_channels = Channel.all.select {|x| !x.hidden?}.sort_by {|x| x.created_at}
     -  visible_channels.each do |channel|
-      %li
+      %li{:class => @channel.present? && @channel.name == channel.name ? "selected":"" }
         = link_to channel.name, channel_path(channel), :class => channel.name.gsub(" ", "-")
-    %li
+    %li{:class => @channel.present? && @channel.name == "bio" ? "selected":"" }
       = link_to "bio", bio_index_path
     %li
       = link_to "blog", "#"
