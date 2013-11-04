@@ -28,6 +28,7 @@
       %ul.title
         %li
         %li Title
+        %li Original Name
         %li Photo
         %li Image Size
       %ol#sortable{"data-update-url" => sort_admin_channel_photos_path(@channel)}
@@ -39,7 +40,10 @@
               %li
                 = link_to cp.photo.name, edit_admin_photo_path(cp.photo)
               %li
+                = cp.photo.main_image.to_s.gsub(('http://s3.amazonaws.com/ericisaacsite/photos/'), (''))
+              %li.image
                 = image_tag (cp.photo.main_image), :style => ("width: 100px;") if cp.photo.main_image.present?
+                %p
               %li
                 = cp.photo.image_size
               %li

@@ -133,4 +133,15 @@ $(document).ready(function () {
 
 });
 
+$(window).load(function () {
+    $('ol#sortable li.image img').each(function () {
+        var myimage = this;
+        var i = new Image();
+        i.src = myimage.src;
+        var rw = i.width;
+        var rh = i.height;
+        $(this).siblings('p').html(rw+'px x '+rh+'px');
+    })
+});
+
 

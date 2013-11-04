@@ -5,21 +5,23 @@
     %thead
       %tr
         %th Name
+        %th Original Name
         %th Channels
-        %th Tags
+        -#%th Tags
         %th Photo
-        %th Image Size
+        -#%th Image Size
         %th{"data-sort-type" => "date"} Created At
     %tbody
       - @photo.each do |photo|
         %tr
           %td= link_to photo.name, [:admin, photo]
+          %td= photo.main_image.to_s.gsub(('http://s3.amazonaws.com/ericisaacsite/photos/'), (''))
           %td
             = photo.channels.collect { |channel| link_to channel.name.titleize, edit_admin_channel_path(channel) }.join(", ").html_safe
-          %td
+          -#%td
             = photo.tags.collect { |tag| link_to tag.name, edit_admin_tag_path(tag) }.join(", ").html_safe
           %td
             = image_tag (photo.main_image), :style => ("width: 100px;") if photo.main_image.present?
-          %td
+          -#%td
             = photo.image_size
           %td= photo.created_at.try(:to_s, :admin_datetime)
