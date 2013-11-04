@@ -17,11 +17,11 @@
       - visible_channels = Channel.all.select {|x| !x.hidden?}.sort_by {|x| x.created_at}
       -  visible_channels.each do |channel|
         %li{:class => @channel.present? && @channel.name == channel.name ? "selected":"" }
-          = link_to channel.name, channel_path(channel), :class => channel.name.gsub(" ", "-")
+          = link_to channel.name, channel_path(channel), :class => channel.name.gsub(" ", "-"), :onClick => "_gaq.push(['_trackEvent', 'Channel', '#{channel.name.titleize}']);"
       %li{:class => @channel.present? && @channel.name == "bio" ? "selected":"" }
-        = link_to "bio", site_bio_path
+        = link_to "bio", site_bio_path, :onClick => "_gaq.push(['_trackEvent', 'Channel', 'Bio']);"
       %li
-        = link_to "blog", "http://food.ericisaac.com/", :target => "_blank"
+        = link_to "blog", "http://food.ericisaac.com/", :target => "_blank", :onClick => "_gaq.push(['_trackEvent', 'Channel', 'Blog']);"
   - if content_for?(:tags_nav)
     = content_for(:tags_nav)
 
