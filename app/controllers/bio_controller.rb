@@ -8,7 +8,7 @@ class BioController < ApplicationController
   def index
     #@bio = Bio.first
     @channel = Channel.find_by_name("bio")
-    @channel_photos = @channel.channel_photos.order("position DESC").all
+    @channel_photos = @channel.channel_photos.order('position asc').all
     @featured_photo = Photo.find(params[:featured_id]) if params[:featured_id]
   end
 

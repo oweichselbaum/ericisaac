@@ -32,7 +32,7 @@
         %li Photo
         %li Image Size
       %ol#sortable{"data-update-url" => sort_admin_channel_photos_path(@channel)}
-        - @channel.channel_photos.each do |cp|
+        - @channel.channel_photos.order('position asc').each do |cp|
           = content_tag_for :li, cp, :class => cycle("odd", "even") do
             %ul
               %li.ordering

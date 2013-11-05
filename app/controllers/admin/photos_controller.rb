@@ -46,7 +46,7 @@ class Admin::PhotosController < AdminController
   end
 
   def sort
-    params[:channel_photo].each do |id, index|
+    params[:channel_photo].each_with_index do |id, index|
       ChannelPhoto.where(:id => id).update_all(:position => index)
     end
 
