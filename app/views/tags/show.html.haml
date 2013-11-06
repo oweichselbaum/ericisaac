@@ -1,0 +1,27 @@
+- content_for(:title) do
+  %title= "eric isaac photography  |  #{@tag.name}"
+
+- if @channel_photos.present?
+  - content_for(:facebook) do
+    - photo = @featured_photo ? @featured_photo : @tag_photos.first
+    %meta{:property => "og:title", :content => photo.name}
+    %meta{:property => "og:image", :content => photo.main_image.url}
+    %meta{:property => "og:description", :content => photo.name}
+    %meta{:property => "og:type", :content => "image"}
+    %meta{:property => "og:url", :content => channel_photo_url(photo.channels.first, photo)}
+
+%h1= @tag.name.titleize
+#photos_container
+  - @tag_photos.each_with_index do |cp, i|
+    .photo_wrapper{:class => "#{cp.image_size.downcase unless cp.image_size.nil?} #{cp.image_type.downcase unless cp.image_type.nil?} #{photo_tags(cp) unless photo_tags(cp).nil?}", :onHover => "_gaq.push(['_trackEvent', '#{@tag.name.titleize}', '#{cp.name.titleize}']);"}
+      = link_to "", cp.main_image.url, :class => "fancybox-thumb", :rel => "fancybox-thumb", :"data-filter" => photo_tags(cp), :title => cp.name.titleize, :onClick => "_gaq.push(['_trackEvent', '#{@tag.name.titleize}', '#{cp.name.titleize}']);"
+      .caption_wrap{:class => "#{cp.image_size.downcase unless cp.image_size.nil?} #{cp.image_type.downcase unless cp.image_type.nil?}"}
+        .caption{:class => "#{cp.image_size.downcase unless cp.image_size.nil?} #{cp.image_type.downcase unless cp.image_type.nil?}"}
+          .black
+            %p
+              = cp.name.titleize
+      .pinit
+        = link_to image_tag("http://assets.pinterest.com/images/pidgets/pin_it_button.png"), "//pinterest.com/pin/create/button/?url=#{channel_photo_url(cp.channels.first, cp)}&media=#{cp.main_image.url}&description=#{cp.name.titleize}", :"data-pin-config" => "none", :"data-pin-do" => "buttonPin"
+      %div{:class => "fb-like", :"data-href" => channel_photo_url(cp.channels.first, cp, featured_id: cp.name), :"data-width" => "450", :"data-layout" => "button_count", :"data-show-faces" => "false", :"data-send" => "false"}
+      %span.wrapper{:class => "#{cp.image_size.downcase unless cp.image_size.nil?} #{cp.image_type.downcase unless cp.image_type.nil?}"}
+        = image_tag cp.main_image.url, :'data-original' => cp.main_image.url, :class => "lazy"

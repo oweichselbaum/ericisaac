@@ -1,18 +1,23 @@
 .photo_wrapper{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?} #{photo_tags(cp.photo) unless photo_tags(cp.photo).nil?}", :'data-position' => cp.position, :onHover => "_gaq.push(['_trackEvent', '#{@channel.name.titleize}', '#{cp.photo.name.titleize}']);"}
-  = link_to "", cp.photo.main_image.url, :class => "fancybox-thumb", :rel => "fancybox-thumb", :"data-filter" => photo_tags(cp.photo), :title => cp.photo.name.titleize, :onClick => "_gaq.push(['_trackEvent', '#{@channel.name.titleize}', '#{cp.photo.name.titleize}']);"
+  - if controller.controller_name == "bio"
+    - if cp.photo.tags.present?
+      = link_to "", tag_path(cp.photo.tags.first), :class => "bio"
+  - else
+    = link_to "", cp.photo.main_image.url, :class => "fancybox-thumb", :rel => "fancybox-thumb", :"data-filter" => photo_tags(cp.photo), :title => cp.photo.name.titleize, :onClick => "_gaq.push(['_trackEvent', '#{@channel.name.titleize}', '#{cp.photo.name.titleize}']);"
   .caption_wrap{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}"}
     .caption{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}"}
       .black
         - if controller.controller_name == "bio"
           .desc_wrap
             = cp.photo.description.html_safe
+            - if cp.photo.tags.present?
+              %h4= "Click to view #{cp.photo.tags.first.name.titleize} photos"
         - else
           %p
             = cp.photo.name.titleize
   .pinit
     = link_to image_tag("http://assets.pinterest.com/images/pidgets/pin_it_button.png"), "//pinterest.com/pin/create/button/?url=#{channel_photo_url(cp.channel, cp.photo)}&media=#{cp.photo.main_image.url}&description=#{cp.photo.name.titleize}", :"data-pin-config" => "none", :"data-pin-do" => "buttonPin"
   %div{:class => "fb-like", :"data-href" => channel_photo_url(cp.channel, cp.photo, featured_id: cp.photo.name), :"data-width" => "450", :"data-layout" => "button_count", :"data-show-faces" => "false", :"data-send" => "false"}
-  -#.frame{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}"}
   %span.wrapper{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}"}
     = image_tag cp.photo.main_image.url, :'data-original' => cp.photo.main_image.url, :class => "lazy"
 
