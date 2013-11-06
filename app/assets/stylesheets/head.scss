@@ -157,6 +157,22 @@
     ul {
       li {
         font-size: 14px;
+        right: -100%;
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        @include transition(.4s);
+        &.about {
+          right: 50%;
+          opacity: 1;
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+          background: #dddddd;
+          @include transition(0s);
+        }
+        &.initial {
+          right: 50%;
+          opacity: 1;
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
+        }
       }
     }
   }

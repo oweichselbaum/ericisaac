@@ -1,7 +1,7 @@
 - tags = @channel.photos.collect {|x| x.tags}
 .tag_names
   %ul#filters
-    %li Filters:
+    %li.about Filters:
     %li
       = link_to "all", "#", :"data-filter" => "*", :"data-rel" => "all", :class => "selected filter", :onClick => "_gaq.push(['_trackEvent', 'Tags', '#{@channel.name.titleize}', 'All']);"
     - tag_name = tags.flatten.collect {|x| x.name}.uniq

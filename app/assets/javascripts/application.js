@@ -115,4 +115,8 @@ $(window).load(function () {
     $('body.photos.show .image_wrapper').css({'width': img_width});
     $('.pace').delay(750).fadeOut();
     $('.loader').delay(750).fadeOut();
+    setTimeout(
+        function () {
+            $('ul#filters li').not('.about').addClass('initial');
+        }, 2000);
 });
