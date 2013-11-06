@@ -160,7 +160,7 @@
         right: -100%;
         opacity: 0;
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-        @include transition(.4s);
+        @include transition(1s);
         &.about {
           right: 50%;
           opacity: 1;
