@@ -1,6 +1,7 @@
 = semantic_form_for [:admin, @tag] do |f|
   = f.inputs do
     = f.inputs :name, :required => true
+    = f.inputs :hidden, :as => :check_box
   = f.buttons do
     = f.submit
 

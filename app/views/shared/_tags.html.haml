@@ -1,4 +1,4 @@
-- tags = @channel.photos.collect {|x| x.tags}
+- tags = @channel.photos.collect {|x| x.tags.where(:hidden => false)}
 .tag_names
   %ul#filters
     %li.about Filters:

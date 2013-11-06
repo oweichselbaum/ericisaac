@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131106175220) do
+ActiveRecord::Schema.define(:version => 20131106214154) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -109,9 +109,10 @@ ActiveRecord::Schema.define(:version => 20131106175220) do
 
   create_table "tags", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
     t.string   "cached_slug"
+    t.boolean  "hidden",      :default => false
   end
 
   add_index "tags", ["cached_slug"], :name => "index_tags_on_cached_slug", :unique => true
