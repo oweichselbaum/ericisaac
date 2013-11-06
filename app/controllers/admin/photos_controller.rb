@@ -60,7 +60,13 @@ class Admin::PhotosController < AdminController
 
   def remove_content
     @channel_photo = ChannelPhoto.find(params[:id])
+    @photo_channels_available = @channel_photo.photo.channels
+    @photo = @channel_photo.photo
     @channel_photo.destroy
+    if @photo_channels_available.blank?
+      @photo.channels << Channel.find_by_name('archive')
+      @photo.save!
+    end
     flash[:notice] = "Photo removed from channel."
     redirect_to admin_channel_path(@channel_photo.channel)
   end
