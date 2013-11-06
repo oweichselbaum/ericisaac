@@ -16,7 +16,7 @@ Ericisaac::Application.routes.draw do
   root :to => "welcome#index"
 
   match 'admin', :to => 'admin#index'
-
+  match '/site/tags/:id', :to => "tags#show", :as => :tag
   resources :bio, :only => :index, :as => :bio
   resources :tags, :only => :show
 
@@ -38,6 +38,5 @@ Ericisaac::Application.routes.draw do
   end
   match '/site/bio', :to => "bio#index"
   match '/site/:id', :to => "channels#show", :as => :channel
-  match '/site/tags/:id', :to => "tags#show", :as => :tag
   match '/site/:channel_id/:id', :to => "channels/photos#show", :as => :channel_photo
 end
