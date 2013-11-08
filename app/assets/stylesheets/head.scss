@@ -12,16 +12,16 @@
       background: black;
       .nav_wrapper {
         .logo {
-          a {
-            height: 44px;
-          }
+          height: 44px;
           h1 {
             font-size: 43px;
             padding: 0;
             color: white;
+            height: 44px;
             span.photo {
               opacity: 0;
               -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.9)";
+              display: none;
             }
           }
           &:hover {
@@ -31,12 +31,8 @@
 
           }
         }
-        .social {
-          bottom: 40px;
-        }
         .info {
           color: white;
-          bottom: 40px;
           a {
             color: white;
             &:hover {
@@ -110,7 +106,7 @@
     min-width: 90%;
     border-bottom: 1px solid black;
     background: #dddddd;
-    z-index: 2;
+    z-index: 1;
     position: relative;
     opacity: .9;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=.9)";
