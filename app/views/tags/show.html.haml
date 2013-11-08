@@ -13,8 +13,8 @@
 %h1= @tag.name.titleize
 #photos_container
   - @tag_photos.each_with_index do |cp, i|
-    .photo_wrapper{:class => "#{cp.image_size.downcase unless cp.image_size.nil?} #{cp.image_type.downcase unless cp.image_type.nil?} #{photo_tags(cp) unless photo_tags(cp).nil?}", :onHover => "_gaq.push(['_trackEvent', '#{@tag.name.titleize}', '#{cp.name.split(' ').map(&:capitalize).join(' ')}']);"}
-      = link_to "", cp.main_image.url, :class => "fancybox-thumb", :rel => "fancybox-thumb", :"data-filter" => photo_tags(cp), :title => cp.name.split(' ').map(&:capitalize).join(' '), :onClick => "_gaq.push(['_trackEvent', '#{@tag.name.titleize}', '#{cp.name.split(' ').map(&:capitalize).join(' ')}']);"
+    .photo_wrapper{:class => "#{cp.image_size.downcase unless cp.image_size.nil?} #{cp.image_type.downcase unless cp.image_type.nil?} #{photo_tags(cp) unless photo_tags(cp).nil?}", :onHover => "_gaq.push(['_trackEvent', '#{@tag.name.titleize}', '#{cp.main_image.to_s.gsub(('http://s3.amazonaws.com/ericisaacsite/photos/'), (''))}']);"}
+      = link_to "", cp.main_image.url, :class => "fancybox-thumb", :rel => "fancybox-thumb", :"data-filter" => photo_tags(cp), :title => cp.name.split(' ').map(&:capitalize).join(' '), :onClick => "_gaq.push(['_trackEvent', '#{@tag.name.titleize}', '#{cp.main_image.to_s.gsub(('http://s3.amazonaws.com/ericisaacsite/photos/'), (''))}']);"
       .caption_wrap{:class => "#{cp.image_size.downcase unless cp.image_size.nil?} #{cp.image_type.downcase unless cp.image_type.nil?}"}
         .caption{:class => "#{cp.image_size.downcase unless cp.image_size.nil?} #{cp.image_type.downcase unless cp.image_type.nil?}"}
           .black

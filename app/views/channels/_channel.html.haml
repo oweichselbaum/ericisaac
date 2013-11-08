@@ -1,9 +1,9 @@
-.photo_wrapper{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?} #{photo_tags(cp.photo) unless photo_tags(cp.photo).nil?}", :'data-position' => cp.position, :onHover => "_gaq.push(['_trackEvent', '#{@channel.name.titleize}', '#{cp.photo.name.split(' ').map(&:capitalize).join(' ')}']);"}
+.photo_wrapper{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?} #{photo_tags(cp.photo) unless photo_tags(cp.photo).nil?}", :'data-position' => cp.position, :onHover => "_gaq.push(['_trackEvent', '#{@channel.name.titleize}', '#{cp.photo.main_image.to_s.gsub(('http://s3.amazonaws.com/ericisaacsite/photos/'), (''))}']);"}
   - if controller.controller_name == "bio"
     - if cp.photo.tags.present?
       = link_to "", tag_path(cp.photo.tags.first), :class => "bio"
   - else
-    = link_to "", cp.photo.main_image.url, :class => "fancybox-thumb", :rel => "fancybox-thumb", :"data-filter" => photo_tags(cp.photo), :title => cp.photo.name.split(' ').map(&:capitalize).join(' '), :onClick => "_gaq.push(['_trackEvent', '#{@channel.name.titleize}', '#{cp.photo.name.split(' ').map(&:capitalize).join(' ')}']);"
+    = link_to "", cp.photo.main_image.url, :class => "fancybox-thumb", :rel => "fancybox-thumb", :"data-filter" => photo_tags(cp.photo), :title => cp.photo.name.split(' ').map(&:capitalize).join(' '), :onClick => "_gaq.push(['_trackEvent', '#{@channel.name.titleize}', '#{cp.photo.main_image.to_s.gsub(('http://s3.amazonaws.com/ericisaacsite/photos/'), (''))}']);"
   .caption_wrap{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}"}
     .caption{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}"}
       .black
