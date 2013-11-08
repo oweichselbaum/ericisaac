@@ -6,8 +6,11 @@
       %tr
         %th Name
         %th Number of Photos
+        %th Channels
     %tbody
       - @tags.each do |tag|
         %tr
           %td= link_to tag.name, [:admin, tag]
           %td= tag.photos.count
+          %td
+            = tag.channels.collect { |channel| link_to channel.name.titleize, edit_admin_channel_path(channel) }.join(", ").html_safe

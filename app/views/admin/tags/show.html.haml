@@ -8,6 +8,12 @@
       %dd
         %b
           = @tag.name.titleize
+      %br
+      %dt Channel:
+      %dd
+        %b
+          = @tag.channels.collect {|x| x.name}.join(", ").titleize
+
 
 
     = link_to "Edit Tag", edit_admin_tag_path(@tag), :class => "small-button"

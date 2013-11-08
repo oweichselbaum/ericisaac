@@ -5,6 +5,8 @@ class Channel < ActiveRecord::Base
 
   has_many :channel_photos
   has_many :photos, :through => :channel_photos
+  has_many :channel_tags
+  has_many :tags, :through => :channel_tags
 
   validates :name, :presence => true, :uniqueness => true
   validates :title, :description, :keywords, :presence => true

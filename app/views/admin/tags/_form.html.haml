@@ -1,6 +1,7 @@
 = semantic_form_for [:admin, @tag] do |f|
   = f.inputs do
     = f.inputs :name, :required => true
+    = f.input :channels, :as => :check_boxes , :collection => Channel.all.sort_by {|b| b[:name]}, :label => "Select a channel for this tag"
     = f.inputs :hidden, :as => :check_box
   = f.buttons do
     = f.submit

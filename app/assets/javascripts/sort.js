@@ -30,7 +30,7 @@ function moveBottom(item) {
 }
 
 jQuery(function () {
-    $('#sortable').sortable({
+    $('#sortable_tag, #sortable_photo').sortable({
         axis: 'y',
         handle: '.handle',
         update: function () {
@@ -50,7 +50,23 @@ jQuery(function () {
             moveDown(btn.parents('.channel_photo'));
     });
 
-    $('.sort_submit').click(function () {
-        $.post($('#sortable').data('update-url'), $('#sortable').sortable('serialize'), $('#sortable').effect('highlight'));
+    $('.tag_commands button').click(function () {
+        var btn = $(this);
+        var val = btn.val();
+        if (val == 'up')
+            moveUp(btn.parents('.channel_tag'));
+        else if (val == 'top')
+            moveTop(btn.parents('.channel_tag'));
+        else if (val == 'bottom')
+            moveBottom(btn.parents('.channel_tag'));
+        else
+            moveDown(btn.parents('.channel_tag'));
+    });
+
+    $('.sort_submit_photo').click(function () {
+        $.post($('#sortable_photo').data('update-url'), $('#sortable_photo').sortable('serialize'), $('#sortable_photo').effect('highlight'));
+    });
+    $('.sort_submit_tag').click(function () {
+        $.post($('#sortable_tag').data('update-url'), $('#sortable_tag').sortable('serialize'), $('#sortable_tag').effect('highlight'));
     });
 });

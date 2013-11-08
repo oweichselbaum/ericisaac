@@ -30,6 +30,14 @@ Ericisaac::Application.routes.draw do
           put :remove_content
         end
       end
+      resources :tags do
+        collection do
+          post :sort
+        end
+        member do
+          put :remove_content
+        end
+      end
     end
     resources :photos
     resources :bios

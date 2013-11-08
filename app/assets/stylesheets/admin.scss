@@ -276,7 +276,10 @@ body {
         color: blue;
       }
     }
-    #sortable {
+    hr {
+      clear: both;
+    }
+    #sortable_photo, #sortable_tag {
       border: 1px solid #999;
       clear: both;
       li {
@@ -310,7 +313,7 @@ body {
         color: #777;
         cursor: move;
       }
-      .commands {
+      .commands, .tag_commands {
         button {
           display: block;
           width: 56px;

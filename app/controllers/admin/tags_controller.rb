@@ -1,5 +1,5 @@
 class Admin::TagsController < AdminController
-  before_filter :load_tag, :except => [:index, :new, :create]
+  before_filter :load_tag, :except => [:index, :new, :create, :sort, :remove_content]
 
   def load_tag
     @tag = Tag.find(params[:id])
@@ -38,5 +38,25 @@ class Admin::TagsController < AdminController
   def destroy
     flash[:notice] = "Tag Deleted." if @tag.destroy
     redirect_to admin_tags_path
+  end
+
+  def sort
+    params[:channel_tag].each_with_index do |id, index|
+      ChannelTag.where(:id => id).update_all(:position => index)
+    end
+
+    #params[:channel_photo].each_with_index do |id, index|
+    #  ChannelPhoto.update_all({position: index+1}, {id: id})
+    #end
+    render nothing: true
+
+    #render :json => {}
+  end
+
+  def remove_content
+    @channel_tag = ChannelTag.find(params[:id])
+    @channel_tag.destroy
+    flash[:notice] = "Tag removed from channel."
+    redirect_to admin_channel_path(@channel_tag.channel)
   end
 end

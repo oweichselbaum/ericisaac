@@ -134,7 +134,7 @@ $(document).ready(function () {
 });
 
 $(window).load(function () {
-    $('ol#sortable li.image img').each(function () {
+    $('ol#sortable_photo li.image img').each(function () {
         var myimage = this;
         var i = new Image();
         i.src = myimage.src;

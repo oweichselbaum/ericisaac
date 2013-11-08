@@ -4,7 +4,7 @@
     %li.about Filters:
     %li
       = link_to "all", "#", :"data-filter" => "*", :"data-rel" => "all", :class => "selected filter", :onClick => "_gaq.push(['_trackEvent', 'Tags', '#{@channel.name.titleize}', 'All']);"
-    - tag_name = tags.flatten.collect {|x| x.name}.uniq
-    - tag_name.sort_by {|x| x}.each do |name|
+    - tag_name = @channel.channel_tags.order('position asc')
+    - tag_name.each do |tag|
       %li
-        = link_to name, "#", :"data-filter" => ".#{name.to_s.downcase.gsub(" ", "_")}", :"data-rel" => "#{name.to_s.downcase.gsub(" ", "_")}", :class => "filter", :onClick => "_gaq.push(['_trackEvent', 'Tags', '#{@channel.name.titleize}', '#{name.titleize}']);"
+        = link_to tag.name, "#", :"data-filter" => ".#{tag.name.to_s.downcase.gsub(" ", "_")}", :"data-rel" => "#{tag.name.to_s.downcase.gsub(" ", "_")}", :class => "filter", :onClick => "_gaq.push(['_trackEvent', 'Tags', '#{@channel.name.titleize}', '#{tag.name.titleize}']);"
