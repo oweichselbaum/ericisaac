@@ -17,7 +17,7 @@
             = cp.photo.name.split(' ').map(&:capitalize).join(' ')
   .pinit
     = link_to image_tag("http://assets.pinterest.com/images/pidgets/pin_it_button.png"), "//pinterest.com/pin/create/button/?url=#{channel_photo_url(cp.channel, cp.photo)}&media=#{cp.photo.main_image.url}&description=#{cp.photo.name.split(' ').map(&:capitalize).join(' ')}", :"data-pin-config" => "none", :"data-pin-do" => "buttonPin"
-  %div{:class => "fb-like", :"data-href" => channel_photo_url(cp.channel, cp.photo, featured_id: cp.photo.name), :"data-width" => "450", :"data-layout" => "button_count", :"data-show-faces" => "false", :"data-send" => "false"}
+  %div{:class => "fb-like", :"data-href" => channel_photo_url(cp.channel, cp.photo, featured_id: cp.photo.main_image.to_s.gsub(('http://s3.amazonaws.com/ericisaacsite/photos/'), (''))), :"data-width" => "450", :"data-layout" => "button_count", :"data-show-faces" => "false", :"data-send" => "false"}
   %span.wrapper{:class => "#{cp.photo.image_size.downcase unless cp.photo.image_size.nil?} #{cp.photo.image_type.downcase unless cp.photo.image_type.nil?}"}
     = image_tag cp.photo.main_image.url, :'data-original' => cp.photo.main_image.url, :class => "lazy"
 

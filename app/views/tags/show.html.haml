@@ -22,6 +22,6 @@
               = cp.name.split(' ').map(&:capitalize).join(' ')
       .pinit
         = link_to image_tag("http://assets.pinterest.com/images/pidgets/pin_it_button.png"), "//pinterest.com/pin/create/button/?url=#{channel_photo_url(cp.channels.first, cp)}&media=#{cp.main_image.url}&description=#{cp.name.split(' ').map(&:capitalize).join(' ')}", :"data-pin-config" => "none", :"data-pin-do" => "buttonPin"
-      %div{:class => "fb-like", :"data-href" => channel_photo_url(cp.channels.first, cp, featured_id: cp.name), :"data-width" => "450", :"data-layout" => "button_count", :"data-show-faces" => "false", :"data-send" => "false"}
+      %div{:class => "fb-like", :"data-href" => channel_photo_url(cp.channels.first, cp, featured_id: cp.main_image.to_s.gsub(('http://s3.amazonaws.com/ericisaacsite/photos/'), (''))), :"data-width" => "450", :"data-layout" => "button_count", :"data-show-faces" => "false", :"data-send" => "false"}
       %span.wrapper{:class => "#{cp.image_size.downcase unless cp.image_size.nil?} #{cp.image_type.downcase unless cp.image_type.nil?}"}
         = image_tag cp.main_image.url, :'data-original' => cp.main_image.url, :class => "lazy"
