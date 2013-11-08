@@ -13,7 +13,7 @@ class Admin::PhotosController < AdminController
     @photo = Photo.new(params[:photo])
     if @photo.save
       flash[:notice] = "Photo saved."
-      redirect_to admin_photo_path(@photo)
+      redirect_to admin_photos_path
     else
 
       render :new
@@ -31,7 +31,7 @@ class Admin::PhotosController < AdminController
       respond_to do |format|
         format.html do
           flash[:notice] = notice
-          redirect_to admin_photo_path(@photo)
+          redirect_to admin_photos_path
         end
 
       end

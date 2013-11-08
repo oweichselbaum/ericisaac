@@ -14,7 +14,7 @@
     %tbody
       - @photo.each do |photo|
         %tr
-          %td= link_to photo.name, [:admin, photo]
+          %td= link_to photo.name, edit_admin_photo_path(photo)
           %td= photo.main_image.to_s.gsub(('http://s3.amazonaws.com/ericisaacsite/photos/'), (''))
           %td
             = photo.channels.collect { |channel| link_to channel.name.titleize, edit_admin_channel_path(channel) }.join(", ").html_safe
