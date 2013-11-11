@@ -271,6 +271,7 @@
         position: absolute;
         bottom: 5px;
         padding: 10px 10px 0px;
+        text-transform: lowercase;
       }
       h4 {
         color: white;
@@ -279,6 +280,7 @@
         bottom: 0;
         font-size: 17px;
         font-weight: normal;
+        text-transform: lowercase;
       }
     }
   }

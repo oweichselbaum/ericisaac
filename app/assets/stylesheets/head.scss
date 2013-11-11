@@ -94,6 +94,7 @@
         bottom: 10px;
         right: 3%;
         @include transition;
+        text-align: right;
       }
       .social {
         position: absolute;
