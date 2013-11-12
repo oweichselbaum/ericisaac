@@ -9,7 +9,7 @@ class TagsController < ApplicationController
   end
 
   def show
-    @tag_photos = @tag.photos.order('created_at desc').all
+    @tag_photos = @tag.photos.sort_by {|x| x.main_image.to_s.gsub(('http://s3.amazonaws.com/ericisaacsite/photos/'), (''))}
     @featured_photo = Photo.find(params[:featured_id]) if params[:featured_id]
   end
 
