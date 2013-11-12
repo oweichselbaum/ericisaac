@@ -62,7 +62,7 @@
       = link_to "menu", "#menu", :class => 'menu'
       #main_header
         = link_to "eric<span>isaac</span>".html_safe, root_path
-      - unless controller.controller_name == "bio"
+      - unless controller.controller_name == "bio" || controller.controller_name == "tags"
         = link_to "filters", "#filters", :class => 'filter'
 
     #content

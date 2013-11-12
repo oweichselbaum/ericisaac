@@ -20,6 +20,15 @@
 
 %h2= @channel.name
 
-#photos_container
+#bio_container
   - @channel_photos.each do |cp|
-    = render "channels/channel", :cp => cp
+    .bio_wrapper
+      - if cp.photo.tags.present?
+        = link_to image_tag(cp.photo.main_image.url), tag_path(cp.photo.tags.first), :class => "bio"
+      - else
+        = image_tag cp.photo.main_image.url
+      .desc_wrap
+        = cp.photo.description.html_safe
+        - if cp.photo.tags.present?
+          = link_to "Click to view #{cp.photo.tags.first.name.split(' ').map(&:capitalize).join(' ')} photos", tag_path(cp.photo.tags.first), :class => "bio"
+

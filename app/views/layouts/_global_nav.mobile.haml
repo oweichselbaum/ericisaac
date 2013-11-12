@@ -17,12 +17,13 @@
       - email = Contact.first.email
       = link_to email, "mailto:#{email}"
 
-%nav#filters.mm-menu.mm-horizontal.mm-ismenu.mm-right
-  - tags = @channel.photos.collect {|x| x.tags.where(:hidden => false)}
-  %ul
-    %li.mm-selected
-      = link_to "all", "#", :"data-filter" => "*", :"data-rel" => "all", :class => "selected filter"
-    - tag_name = @channel.channel_tags.order('position asc')
-    - tag_name.each do |tag|
-      %li
-        = link_to tag.name.downcase, "#", :"data-filter" => ".#{tag.name.to_s.downcase.gsub(" ", "_")}", :"data-rel" => "#{tag.name.to_s.downcase.gsub(" ", "_")}", :class => "filter"
+- unless controller.controller_name == "bio" || controller.controller_name == "tags"
+  %nav#filters.mm-menu.mm-horizontal.mm-ismenu.mm-right
+    - tags = @channel.photos.collect {|x| x.tags.where(:hidden => false)}
+    %ul
+      %li.mm-selected
+        = link_to "all", "#", :"data-filter" => "*", :"data-rel" => "all", :class => "selected filter"
+      - tag_name = @channel.channel_tags.order('position asc')
+      - tag_name.each do |tag|
+        %li
+          = link_to tag.name.downcase, "#", :"data-filter" => ".#{tag.name.to_s.downcase.gsub(" ", "_")}", :"data-rel" => "#{tag.name.to_s.downcase.gsub(" ", "_")}", :class => "filter"

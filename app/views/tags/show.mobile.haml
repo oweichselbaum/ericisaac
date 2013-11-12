@@ -1,0 +1,18 @@
+- content_for(:title) do
+  %title= "eric isaac photography  |  #{@tag.name}"
+
+- if @channel_photos.present?
+  - content_for(:facebook) do
+    - photo = @featured_photo ? @featured_photo : @tag_photos.first
+    %meta{:property => "og:title", :content => photo.name}
+    %meta{:property => "og:image", :content => photo.main_image.url}
+    %meta{:property => "og:description", :content => photo.name}
+    %meta{:property => "og:type", :content => "image"}
+    %meta{:property => "og:url", :content => channel_photo_url(photo.channels.first, photo)}
+
+%h2= @tag.name.titleize
+#photos_container
+  - @tag_photos.each_with_index do |cp, i|
+    .photo_wrapper{:class => "#{cp.image_size.downcase unless cp.image_size.nil?} #{cp.image_type.downcase unless cp.image_type.nil?} #{photo_tags(cp) unless photo_tags(cp).nil?} #{cycle("", "even")}"}
+      = link_to "", cp.main_image.url, :class => "swipebox-isotope", :"data-filter" => photo_tags(cp), :title => cp.name.titleize
+      = image_tag cp.main_image.url, :'data-original' => cp.main_image.url, :class => "lazy"
