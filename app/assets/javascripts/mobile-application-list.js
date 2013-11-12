@@ -12,9 +12,12 @@
 //
 //= require pace.js
 //= require imagesloaded.js
+//= require waypoints.min
+//= require waypoints-sticky.min
 //= require jquery.lazyload.min
 //= require jquery.isotope.min
 //= require jquery.swipebox
+//= require jquery.mmenu.min.all.js
 //= require mobile
 
 

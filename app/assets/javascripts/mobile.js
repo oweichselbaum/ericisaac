@@ -5,23 +5,29 @@ onAnimationFinished = function () {
 $(document).ready(function () {
     // Fixing iOS Safari "WTF" issue
     // http://stackoverflow.com/questions/7358781/tapping-on-label-in-mobile-safari
-    $('label').click(function () {
-    });
+//    $('label').click(function () {
+//    });
+//
+//    $('#handler-left').change(function () {
+//        if ($('#handler-left').is(':checked')) {
+//            $('#content').click(function () {
+//                $('#handler-left').attr('checked', false);
+//            });
+//        }
+//    })
+//    $('#handler-right').change(function () {
+//        if ($('#handler-right').is(':checked')) {
+//            $('#content').click(function () {
+//                $('#handler-right').attr('checked', false);
+//            });
+//        }
+//    })
+    $("nav#menu").mmenu({
 
-    $('#handler-left').change(function () {
-        if ($('#handler-left').is(':checked')) {
-            $('#content').click(function () {
-                $('#handler-left').attr('checked', false);
-            });
-        }
-    })
-    $('#handler-right').change(function () {
-        if ($('#handler-right').is(':checked')) {
-            $('#content').click(function () {
-                $('#handler-right').attr('checked', false);
-            });
-        }
-    })
+    });
+    $("nav#filters").mmenu({
+        position: 'right'
+    });
 //    var title = window.location.pathname.replace("/", "");
 //    if (title == "") {
 //        $('.new-work').addClass('selected');
@@ -69,12 +75,13 @@ $(document).ready(function () {
     optionFilterLinks = $('#filter a');
 
     $('#filters a').click(function () {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
         var selector = $(this).attr('data-filter');
         $container.isotope({
             filter: selector,
             animationEngine: 'best-available'
         }, onAnimationCompleted); // callback here
-        $('#handler-right').attr('checked', false);
+//        $('#handler-right').attr('checked', false);
         $('.filter').removeClass('selected');
         $(this).addClass('selected');
         setTimeout(onAnimationFinished, 600);

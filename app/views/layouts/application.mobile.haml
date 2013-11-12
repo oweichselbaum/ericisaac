@@ -38,22 +38,23 @@
 
     = render 'layouts/global_nav'
 
-    #wrapper
-      #button
-        - unless controller.controller_name == "bio"
-          %label{:for => "handler-right", :id => "right", :href => "#"}
-            Filter
-        %label{:for => "handler-left", :id => "left", :href => "#"}
-          Menu
-        #main_header
-          = link_to "eric<span>isaac</span>".html_safe, root_path
-      #content
-        .loader
-        #flash
-          %p.notice= notice
-          %p.alert= alert
+    #header.mm-fixed-top
+      -#- unless controller.controller_name == "bio"
+      -#  %label{:for => "handler-right", :id => "right", :href => "#"}
+      -#    filter
+      = link_to "menu", "#menu", :class => 'menu'
+      #main_header
+        = link_to "eric<span>isaac</span>".html_safe, root_path
+      - unless controller.controller_name == "bio"
+        = link_to "filters", "#filters", :class => 'filter'
 
-        = yield
+    #content
+      .loader
+      #flash
+        %p.notice= notice
+        %p.alert= alert
+
+      = yield
 
     = render 'layouts/footer'
     %script{:type => "text/javascript", :src => "//assets.pinterest.com/js/pinit.js"}

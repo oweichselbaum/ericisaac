@@ -12,5 +12,6 @@
  *= require pace
  *= require isotope
  *= require swipebox
+ *= require jquery.mmenu.all.css
  *= require_directory ./mobile
  */

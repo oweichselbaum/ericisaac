@@ -46,5 +46,12 @@
     //    }
     //  }
     //}
+    &.isotope-hidden {
+      height: 0;
+      padding: 0;
+      margin: 0;
+      display: none;
+      width: 0;
+    }
   }
 }
